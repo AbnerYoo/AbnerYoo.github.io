@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>配置说明 on 分享最新最特别的小技能</title>
+    <link>http://localhost:1313/categories/%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/</link>
+    <description>Recent content in 配置说明 on 分享最新最特别的小技能</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 14 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/categories/%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>aria2选项说明--基础选项</title>
+      <link>http://localhost:1313/post/aira2_options_1_basic_option/</link>
+      <pubDate>Mon, 14 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/aira2_options_1_basic_option/</guid>
+      <description>以下均根据官方文档及相关翻译整合和梳理 1. 基础选项 1 -d, --dir=&amp;lt;DIR&amp;gt; 保存下载文件的路径 1 -i, --input-file=&amp;lt;FILE&amp;gt; 文件中列出的下载地址。你可以通过在一行上，用TAB分隔多个下载</description>
+    </item>
+    
+  </channel>
+</rss>

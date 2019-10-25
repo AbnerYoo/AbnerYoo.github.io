@@ -7,18 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>分类: 配置说明 - 车库Lab-分享最新最特别的小技能</title>
+<title>aria2选项说明--基础选项 - 车库Lab-分享最新最特别的小技能</title>
 
 
-    <meta name="description" content="分享最新最特别的小技能">
-<meta name="keywords" content="车库Lab,G-Lab,技能,互联网,IT">
-<meta property="og:type" content="website">
-<meta property="og:title" content="车库Lab-分享最新最特别的小技能">
-<meta property="og:url" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;categories&#x2F;aria2&#x2F;%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E&#x2F;index.html">
+    <meta name="description" content="以下均根据官方文档及相关翻译整合和梳理 基础选项1-d, --dir=&amp;lt;DIR&amp;gt; 保存下载文件的路径">
+<meta name="keywords" content="aria2,aria2选项,aria2配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="aria2选项说明--基础选项">
+<meta property="og:url" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;2019&#x2F;aira2-options-1-basic-option&#x2F;index.html">
 <meta property="og:site_name" content="车库Lab-分享最新最特别的小技能">
-<meta property="og:description" content="分享最新最特别的小技能">
+<meta property="og:description" content="以下均根据官方文档及相关翻译整合和梳理 基础选项1-d, --dir=&amp;lt;DIR&amp;gt; 保存下载文件的路径">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;images&#x2F;og_image.png">
+<meta property="og:updated_time" content="2019-10-21T15:48:01.902Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;images&#x2F;og_image.png">
 
@@ -80,13 +81,13 @@
 
 <link rel="stylesheet" href="/css/style.css">
 </head>
-<body class="is-3-column">
+<body class="is-2-column">
     <nav class="navbar navbar-main">
     <div class="container">
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/og_image_g_lab.png" alt="车库Lab-分享最新最特别的小技能" height="28">
+                <img src="/images/og_image_g_lab.png" alt="aria2选项说明--基础选项" height="28">
             
             </a>
         </div>
@@ -114,6 +115,10 @@
             <div class="navbar-end">
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -127,21 +132,7 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/categories">分类</a></li>
-            
-            <li><a href="/categories/aria2/">aria2</a></li>
-            
-            <li class="is-active"><a href="#" aria-current="page">配置说明</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    
+                <div class="column is-8-tablet is-9-desktop is-9-widescreen has-order-2 column-main">
 <div class="card">
     
     <div class="card-content article ">
@@ -162,29 +153,70 @@
                 </span>
                 
                 
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
             </div>
         </div>
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/aira2-options-1-basic-option/">aria2选项说明--基础选项</a>
+                aria2选项说明--基础选项
             
         </h1>
         <div class="content">
             <p><em>以下均根据官方文档及相关翻译整合和梳理</em></p>
 <h1 id="基础选项"><a href="#基础选项" class="headerlink" title="基础选项"></a>基础选项</h1><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-d, --dir=&lt;DIR&gt;</span><br></pre></td></tr></table></figure>
 <p>保存下载文件的路径</p>
+<a id="more"></a>
+<hr>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-i, --input-file=&lt;FILE&gt;</span><br></pre></td></tr></table></figure>
+<p>文件中列出的下载地址。你可以通过在一行上，用TAB分隔多个下载地址，来为一个下载对象指定多源下载。另外，可以在每个源地址后指定选项。 选项行必须以一个或多个空白符（空格或TAB）开头，并且每行只含一个选项置。文件可以使用GZIP压缩. 当文件以-指定, aria2将会从标准输入（stdin）读取。详细信息详见“输入文件（Input File）”章节。 另请参见 <code>--deferred-input</code> 选项。 另请参见 <code>--save-session</code> 选项。</p>
+<hr>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-l, --log=&lt;LOG&gt;</span><br></pre></td></tr></table></figure>
+<p>日志文件的文件名。 如果被指定为 - ，日志将以标准输出（stdout）。如果指定为空字符串（“”），或者省略该选项，日志不会写入到磁盘上。</p>
+<hr>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-j, --max-concurrent-downloads=&lt;N&gt;</span><br></pre></td></tr></table></figure>
+<p>设置每个队列并行下载的最大数量。另请参见 <code>--split option</code>。 默认: <strong>5</strong></p>
+<blockquote><p><code>--max-concurrent-downloads</code> 限制同时下载的项目数量。 <code>--split</code> 和 <code>--min-split-size</code> 影响每个项目内部的连接数量。 假设你有这样一个输入文件（参见<code>--input-file option</code>）:</p>
+<blockquote><p><a href="http://example.com/foo" target="_blank" rel="noopener">http://example.com/foo</a><br><a href="http://example.com/bar" target="_blank" rel="noopener">http://example.com/bar</a></p>
+</blockquote>
+
+
+<p>这里有两个下载项目。如果配置<code>--max-concurrent-downloads</code>值被设置大于或等于2，aria2能同时下载这些项目。在每个下载项目，你能通过<code>--split</code> 或者 <code>--min-split-size</code> 等来设置连接数。</p></blockquote>
+
+<hr>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-V, --check-integrity [true|false]</span><br></pre></td></tr></table></figure>
+<p>通过验证块或完整文件的哈希值来检查文件的完整性。该选项仅对 BitTorrent、带校验和的 Metalink 和（启用 <code>--checksum</code> 选项时）HTTP(S)/FTP 下载有效。如提供的是文件块的校验和，在下载时就可自动校验并重试损坏的部分。换成整文件，就必须等到下载完成才能校验。这取决于文件长度。如果校验失败，文件将被重新下载。如果同时提供了按块的校验值和全文件校验值，那么只会使用块哈希。默认：<strong>false</strong></p>
+<hr>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-c, --continue [true|false]</span><br></pre></td></tr></table></figure>
+<p>继续下载一个仅部分完成的文件。<br>使用这个选项来继续下载一个由浏览器或其他程序从开头单线程下载的文件。<br>目前这个选项仅能用于 http(s)/ftp 下载。</p>
+<hr>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-h, --help[=&lt;TAG&gt;|&lt;KEYWORD&gt;]</span><br></pre></td></tr></table></figure>
+<p>帮助信息按照以“#”开头的标签分类。<br>例如，输入<code>--help=#http</code>会得到带<code>#http</code><br>标签的各选项的用法。<br>如果指定了非标签的词，那么打印名字含这个词<br>的各选项的用法。可用的值有：<br><code>#basic</code>, <code>#advanced</code>, <code>#http</code>, <code>#https</code>, <code>#ftp</code>, <code>#metalink</code>, <code>#bittorrent</code>, <code>#cookie</code>, <code>#hook</code>, <code>#file</code>, <code>#rpc</code>, <code>#checksum</code>, <code>#experimental</code>, <code>#deprecated</code>, <code>#help</code>, <code>#all</code>。默认：<strong>#basic</strong></p>
+<h1 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h1><ul>
+<li><a href="https://aria2.github.io/manual/en/html/aria2c.html" target="_blank" rel="noopener" title="aria2官方文档">aria2官方文档</a></li>
+<li><a href="https://translations.launchpad.net/aria2/trunk/+pots/aria2/zh_CN/+translate" target="_blank" rel="noopener" title="aria2指令说明翻译（中文）">aria2指令说明翻译（中文）</a></li>
+</ul>
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/aira2-options-1-basic-option/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/aria2/" rel="tag">aria2</a>, <a class="has-link-grey -link" href="/tags/aria2%E9%80%89%E9%A1%B9/" rel="tag">aria2选项</a>, <a class="has-link-grey -link" href="/tags/aria2%E9%85%8D%E7%BD%AE/" rel="tag">aria2配置</a>
                 </div>
             </div>
         </div>
         
+        
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
         
     </div>
 </div>
@@ -195,14 +227,33 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: true,
+        app_id: 'I1gqCqEE9HOtmeFlhxTrP64b-MdYXbMMI',
+        app_key: 'yFDI4nvx1zXLhP2cDLJqVdWe',
+        placeholder: '来一起畅言吧'
+    });
+</script>
 
+    </div>
+</div>
 </div>
                 
 
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+<div class="column is-4-tablet is-3-desktop is-3-widescreen  has-order-1 column-left ">
     
         
 <div class="card widget">
@@ -289,9 +340,29 @@
 </div>
     
         
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#基础选项">
+        <span class="has-mr-6">1</span>
+        <span>基础选项</span>
+        </a></li><li>
+        <a class="is-flex" href="#相关链接">
+        <span class="has-mr-6">2</span>
+        <span>相关链接</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
+
     
     
-        <div class="column-right-shadow is-hidden-widescreen ">
+        <div class="column-right-shadow  ">
         
             
 <div class="card widget">
@@ -404,127 +475,6 @@
 </div>
         
         </div>
-    
-</div>
-
-				
-                
-
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                分类
-            </h3>
-            <ul class="menu-list">
-            <li>
-        <a class="level is-marginless" href="/categories/aria2/">
-            <span class="level-start">
-                <span class="level-item">aria2</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/aria2/%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/">
-            <span class="level-start">
-                <span class="level-item">配置说明</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li></ul></li>
-            </ul>
-        </div>
-    </div>
-</div>
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                标签
-            </h3>
-            <div class="field is-grouped is-grouped-multiline">
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/aria2/">
-                        <span class="tag">aria2</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/aria2%E9%80%89%E9%A1%B9/">
-                        <span class="tag">aria2选项</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/aria2%E9%85%8D%E7%BD%AE/">
-                        <span class="tag">aria2配置</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</div>
-    
-        <div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            最新文章
-        </h3>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-21T12:36:33.000Z">2019-10-21</time></div>
-                    <a href="/2019/aira2-options-1-basic-option/" class="title has-link-black-ter is-size-6 has-text-weight-normal">aria2选项说明--基础选项</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/aria2/">aria2</a> / <a class="has-link-grey -link" href="/categories/aria2/%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/">配置说明</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-    </div>
-</div>
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            归档
-        </h3>
-        <ul class="menu-list">
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/10/">
-                <span class="level-start">
-                    <span class="level-item">十月 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        </ul>
-        </div>
-    </div>
-</div>
-    
     
 </div>
 
@@ -538,7 +488,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/og_image_g_lab.png" alt="车库Lab-分享最新最特别的小技能" height="28">
+                    <img src="/images/og_image_g_lab.png" alt="aria2选项说明--基础选项" height="28">
                 
                 </a>
                 <p class="is-size-7">

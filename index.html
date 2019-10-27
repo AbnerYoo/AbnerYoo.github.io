@@ -146,7 +146,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 562 个字)
+                    4 分钟 读完 (大约 563 个字)
                 </span>
                 
                 
@@ -162,40 +162,17 @@
             <p><em>本篇文章讲解Node.js在Windows平台的安装和配置</em></p>
 <h1 id="什么是Node-js"><a href="#什么是Node-js" class="headerlink" title="什么是Node.js"></a>什么是Node.js</h1><p>简单来说，Node.js就是可以使用前端JavaScript语言来编写后端服务的运行环境。它采用的是Google的V8引擎，并且可以跨平台运行。就像是jvm之于Java一样。</p>
 <h1 id="什么是npm"><a href="#什么是npm" class="headerlink" title="什么是npm"></a>什么是npm</h1><p>npm（全称 Node Package Manager，即“node包管理器”），是Node.js内置的软件包管理器，提供第三方模块的安装、更新和卸载等功能。</p>
-<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>从<a href="https://nodejs.org/en/" target="_blank" rel="noopener">官方网站</a>下载最新安装包</p>
-<h2 id="版本选择"><a href="#版本选择" class="headerlink" title="版本选择"></a>版本选择</h2><p>官网有以下两种版本选择</p>
-<img src="/images/article/2019/nodejs_version.png" class title="nodejs版本选择">
-<ul>
-<li>LTS:长期有效版本，兼容老版本的特性，通常下载该版本</li>
-<li>Current：最新特性版本，不兼容老版本</li>
-</ul>
-<p>考虑稳定性和兼容性，我们选择最新的LTS版本下载即可，这也是官方较为推荐的版本。</p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>打开官网下载的安装文件，修改安装路径即可，除非有特殊需求，否则其余选项均默认。</p>
-<h1 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h1><ol>
-<li><p>验证Node.js<br>输入以下指令，如果返回对应版本号及安装成功</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>验证npm<br>输入以下指令，如果返回对应版本号及安装成功</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h1 id="设置修改"><a href="#设置修改" class="headerlink" title="设置修改"></a>设置修改</h1><p>Node.js安装完成后，也默认安装了npm，在默认设置下，npm会将缓存及相关文件下载在C盘，这对C盘空间比较宝贵的朋友来说不是很友好。因此，我们还需要修改下缓存路径和全局安装包路径。</p>
-<ol>
-<li><p>在指路径下新建两个文件夹<code>node_global</code>和<code>node_cache</code></p>
-</li>
-<li><p>将上面两个文件夹设置到npm中</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config set prefix &quot;指定路径\node_global&quot;</span><br><span class="line">npm config set cache &quot;指定路径\node_cache&quot;</span><br></pre></td></tr></table></figure></li>
-<li><p>设置环境变量</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">系统变量</span><br><span class="line">NODE_PATH=指定路径\node_global\node_modules</span><br><span class="line"></span><br><span class="line">用户变量</span><br><span class="line">Path中C:\Users\用户名\AppData\Roaming\npm</span><br><span class="line">改为：指定路径\node_global</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://zh.wikipedia.org/wiki/Node.js" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/Node.js</a><br><a href="https://zh.wikipedia.org/wiki/Npm" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/Npm</a><br><a href="http://www.cnblogs.com/yzadd/p/6547668.html" target="_blank" rel="noopener">http://www.cnblogs.com/yzadd/p/6547668.html</a></p>
-
         </div>
 		
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/nodejs-install-windows/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>

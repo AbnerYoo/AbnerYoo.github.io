@@ -7,14 +7,14 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>标签: aria2 - 车库Lab-分享最新最特别的小技能</title>
+<title>标签: Node.js - 车库Lab-分享最新最特别的小技能</title>
 
 
     <meta name="description" content="分享最新最特别的小技能">
 <meta name="keywords" content="车库Lab,G-Lab,技能,互联网,IT">
 <meta property="og:type" content="website">
 <meta property="og:title" content="车库Lab-分享最新最特别的小技能">
-<meta property="og:url" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;tags&#x2F;aria2&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;tags&#x2F;Node-js&#x2F;index.html">
 <meta property="og:site_name" content="车库Lab-分享最新最特别的小技能">
 <meta property="og:description" content="分享最新最特别的小技能">
 <meta property="og:locale" content="zh-CN">
@@ -133,7 +133,7 @@
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
             <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">aria2</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Node.js</a></li>
         </ul>
         </nav>
     </div>
@@ -146,17 +146,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-26T11:24:14.000Z">2019-10-26</time>
+                <time class="level-item has-text-grey" datetime="2019-10-27T13:16:26.000Z">2019-10-27</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/aria2/">aria2</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/aria2/%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/">配置说明</a>
+                <a class="has-link-grey -link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%E5%90%8E%E7%AB%AF/Node-js/">Node.js</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    16 分钟 读完 (大约 2390 个字)
+                    4 分钟 读完 (大约 562 个字)
                 </span>
                 
                 
@@ -165,85 +165,47 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/aria2-options-2-http-ftp-sftp-option/">aria2选项说明--HTTP/FTP/SFTP选项</a>
+                <a class="has-link-black-ter" href="/2019/nodejs-install-windows/">Node.js 安装（Windows篇）</a>
             
         </h1>
         <div class="content">
-            <p><em>以下均根据官方文档及相关翻译整合和梳理</em></p>
-<h1 id="HTTP-FTP-SFTP选项"><a href="#HTTP-FTP-SFTP选项" class="headerlink" title="HTTP/FTP/SFTP选项"></a>HTTP/FTP/SFTP选项</h1><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--all-proxy=&lt;PROXY&gt;</span><br></pre></td></tr></table></figure>
-<p>为所有协议的传输使用代理服务器。用 “”（空字串）来覆盖之前定义的代理。您可以使用 <code>--http-proxy</code>，<code>--https-proxy</code> 和 <code>--ftp-proxy</code> 选项为某个协议指定代理服务器。该选项对所有下载有效。<br>代理地址格式<code>[http://][USER:PASSWORD@]HOST[:PORT]</code>。另请参见： 环境（ENVIRONMENT）章节。</p>
-<blockquote>
-<p>如果用户名和密码被内置在了代理地址中，并且还通过<em>–{http,https,ftp,all}-proxy-{user,passwd}</em>选项来指定，这些之后被指定的选项覆盖之前的选项。例如，如果你在aria2.conf配置文件中指定<code>http-proxy-user=myname, http-proxy-passwd=mypass</code>并且在命令行也指定<code>--http-proxy=&quot;http://proxy&quot;</code><br>， 然后你会得到HTTP代理设置<code>http://proxy</code>带上用户名<code>myname</code>和密码<code>mypass</code>。</p>
-<p>另一个例子，如果你在命令行指定<code>--http-proxy=&quot;http://user:pass@proxy&quot; --http-proxy-user=&quot;myname&quot; --http-proxy-passwd=&quot;mypass&quot;</code>，然后你会得到HTTP代理设置<code>http://proxy</code>带上用户名<code>myname</code>和密码<code>mypass</code>。</p>
-<p>再一个例子，如果你在命令行指定<code>--http-proxy-user=&quot;myname&quot; --http-proxy-passwd=&quot;mypass&quot; --http-proxy=&quot;http://user:pass@proxy&quot;</code>，然后你会得到HTTP代理设置<code>http://proxy</code>带上用户名<code>user</code>和密码<code>pass</code>。</p>
-</blockquote>
+            <p><em>本篇文章讲解Node.js在Windows平台的安装和配置</em></p>
+<h1 id="什么是Node-js"><a href="#什么是Node-js" class="headerlink" title="什么是Node.js"></a>什么是Node.js</h1><p>简单来说，Node.js就是可以使用前端JavaScript语言来编写后端服务的运行环境。它采用的是Google的V8引擎，并且可以跨平台运行。就像是jvm之于Java一样。</p>
+<h1 id="什么是npm"><a href="#什么是npm" class="headerlink" title="什么是npm"></a>什么是npm</h1><p>npm（全称 Node Package Manager，即“node包管理器”），是Node.js内置的软件包管理器，提供第三方模块的安装、更新和卸载等功能。</p>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>从<a href="https://nodejs.org/en/" target="_blank" rel="noopener">官方网站</a>下载最新安装包</p>
+<h2 id="版本选择"><a href="#版本选择" class="headerlink" title="版本选择"></a>版本选择</h2><p>官网有以下两种版本选择</p>
+<img src="/images/article/2019/nodejs_version.png" class title="nodejs版本选择">
+<ul>
+<li>LTS:长期有效版本，兼容老版本的特性，通常下载该版本</li>
+<li>Current：最新特性版本，不兼容老版本</li>
+</ul>
+<p>考虑稳定性和兼容性，我们选择最新的LTS版本下载即可，这也是官方较为推荐的版本。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>打开官网下载的安装文件，修改安装路径即可，除非有特殊需求，否则其余选项均默认。</p>
+<h1 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h1><ol>
+<li><p>验证Node.js<br>输入以下指令，如果返回对应版本号及安装成功</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>验证npm<br>输入以下指令，如果返回对应版本号及安装成功</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h1 id="设置修改"><a href="#设置修改" class="headerlink" title="设置修改"></a>设置修改</h1><p>Node.js安装完成后，也默认安装了npm，在默认设置下，npm会将缓存及相关文件下载在C盘，这对C盘空间比较宝贵的朋友来说不是很友好。因此，我们还需要修改下缓存路径和全局安装包路径。</p>
+<ol>
+<li><p>在指路径下新建两个文件夹<code>node_global</code>和<code>node_cache</code></p>
+</li>
+<li><p>将上面两个文件夹设置到npm中</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config set prefix &quot;指定路径\node_global&quot;</span><br><span class="line">npm config set cache &quot;指定路径\node_cache&quot;</span><br></pre></td></tr></table></figure></li>
+<li><p>设置环境变量</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">系统变量</span><br><span class="line">NODE_PATH=指定路径\node_global\node_modules</span><br><span class="line"></span><br><span class="line">用户变量</span><br><span class="line">Path中C:\Users\用户名\AppData\Roaming\npm</span><br><span class="line">改为：指定路径\node_global</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://zh.wikipedia.org/wiki/Node.js" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/Node.js</a><br><a href="https://zh.wikipedia.org/wiki/Npm" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/Npm</a><br><a href="http://www.cnblogs.com/yzadd/p/6547668.html" target="_blank" rel="noopener">http://www.cnblogs.com/yzadd/p/6547668.html</a></p>
+
         </div>
 		
         
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/aria2-options-2-http-ftp-sftp-option/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-21T12:36:33.000Z">2019-10-21</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/aria2/">aria2</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/aria2/%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/">配置说明</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5 分钟 读完 (大约 818 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/aria2-options-1-basic-option/">aria2选项说明--基础选项</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>以下均根据官方文档及相关翻译整合和梳理</em></p>
-<h1 id="基础选项"><a href="#基础选项" class="headerlink" title="基础选项"></a>基础选项</h1><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-d, --dir=&lt;DIR&gt;</span><br></pre></td></tr></table></figure>
-<p>保存下载文件的路径</p>
-        </div>
-		
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/aria2-options-1-basic-option/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
         
         
     </div>

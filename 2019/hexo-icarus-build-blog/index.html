@@ -10,16 +10,16 @@
 <title>Hexo博客搭建之Icarus主题--基础操作篇 - 车库Lab-分享最新最特别的小技能</title>
 
 
-    <meta name="description" content="安装以下所有安装过程均在Windows平台进行 环境准备如果要使用hexo及相关主题，则需要有Node.js和Git，前往对应官方网站下载最新安装包。 Node.js安装hexo官方要求Node.js版本不低于8.6，并建议使用10.0及以上版本。  官方下载地址：  Node.js  具体安装方法可参考Node.js 安装（Windows篇）。 Git安装 Git  下载最新的Windows平台">
+    <meta name="description" content="安装以下所有安装过程均在Windows平台进行 环境准备如果要使用hexo及相关主题，则需要有Node.js和Git，前往对应官方网站下载最新安装包。">
 <meta name="keywords" content="hexo,博客搭建,Icarus">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo博客搭建之Icarus主题--基础操作篇">
 <meta property="og:url" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;2019&#x2F;hexo-icarus-build-blog&#x2F;index.html">
 <meta property="og:site_name" content="车库Lab-分享最新最特别的小技能">
-<meta property="og:description" content="安装以下所有安装过程均在Windows平台进行 环境准备如果要使用hexo及相关主题，则需要有Node.js和Git，前往对应官方网站下载最新安装包。 Node.js安装hexo官方要求Node.js版本不低于8.6，并建议使用10.0及以上版本。  官方下载地址：  Node.js  具体安装方法可参考Node.js 安装（Windows篇）。 Git安装 Git  下载最新的Windows平台">
+<meta property="og:description" content="安装以下所有安装过程均在Windows平台进行 环境准备如果要使用hexo及相关主题，则需要有Node.js和Git，前往对应官方网站下载最新安装包。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-10-30T15:05:43.690Z">
+<meta property="og:updated_time" content="2019-10-30T15:16:13.220Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;images&#x2F;og_image.png">
 
@@ -150,7 +150,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    17 分钟 读完 (大约 2589 个字)
+                    18 分钟 读完 (大约 2749 个字)
                 </span>
                 
                 
@@ -170,6 +170,7 @@
         <div class="content">
             <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><strong>以下所有安装过程均在Windows平台进行</strong></p>
 <h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><p>如果要使用hexo及相关主题，则需要有Node.js和Git，前往对应官方网站下载最新安装包。</p>
+<a id="more"></a>
 <h3 id="Node-js安装"><a href="#Node-js安装" class="headerlink" title="Node.js安装"></a>Node.js安装</h3><blockquote><p>hexo官方要求Node.js版本不低于8.6，并建议使用10.0及以上版本。</p>
 </blockquote>
 <p>官方下载地址：</p>
@@ -256,9 +257,13 @@
 <h2 id="编辑文章"><a href="#编辑文章" class="headerlink" title="编辑文章"></a>编辑文章</h2><h3 id="默认模板内容"><a href="#默认模板内容" class="headerlink" title="默认模板内容"></a>默认模板内容</h3><p>默认生成文章只有以下内容</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章标题</span><br><span class="line">date: 文件生成时间</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 <p><code>title</code>为文件名，建议修改为中文标题，这个标题将会在作为文章标题在博客页面上显示。<br><code>date</code>是文件生成时间，定义上是文章发表时间，可用按需修改。</p>
-<h3 id="自定义内容"><a href="#自定义内容" class="headerlink" title="自定义内容"></a>自定义内容</h3><p>通常我们还需要为文章增加分类信息和标签信息（tag信息）。<br>例如：</p>
+<h3 id="自定义模板内容"><a href="#自定义模板内容" class="headerlink" title="自定义模板内容"></a>自定义模板内容</h3><p>通常我们还需要为文章增加分类信息和标签信息（tag信息）。<br>例如：</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo博客搭建之Icarus主题</span><br><span class="line">date: 2019-10-28 20:30:24</span><br><span class="line">tags:</span><br><span class="line">- hexo</span><br><span class="line">- 博客搭建</span><br><span class="line">- Icarus</span><br><span class="line">categories:</span><br><span class="line">- 前端</span><br><span class="line">- 博客搭建</span><br><span class="line">toc: true</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 <p>需要说明的是<code>分类（categories）</code>是有层级的，按照如上配置，表示<code>博客搭建</code>分类在<code>前端</code>分类下。<br><code>toc</code>表示开启本篇文章的目录组件，但是前提是主题配置中也启用了目录组件，关于该配置可参考<a href="https://blog.zhangruipeng.me/hexo-theme-icarus/Configuration/Posts/table-of-contents-catalogue/" target="_blank" rel="noopener">Icarus官方配置指导</a>。<br>其他配置可参考<a href="https://hexo.io/zh-cn/docs/front-matter" target="_blank" rel="noopener">hexo官方文档</a>。</p>
+<h3 id="文章正文"><a href="#文章正文" class="headerlink" title="文章正文"></a>文章正文</h3><p>文章采用markdown语法编写，同时还可用用hexo的<a href="https://hexo.io/zh-cn/docs/tag-plugins" target="_blank" rel="noopener">标签插件</a>来增加更多的样式。</p>
+<blockquote><p>需要注意的是，在Icarus主题中，默认在文章列表显示的是文章全文，如果需要在文章列表只显示文章部分内容，那么需要在文章正文加上<code>&lt;!-- more --&gt;</code>。这样，在<code>&lt;!-- more --&gt;</code>之前的内容将会在列表显示。详细说明，参考<a href="https://hexo.io/zh-cn/docs/tag-plugins#%E6%96%87%E7%AB%A0%E6%91%98%E8%A6%81%E5%92%8C%E6%88%AA%E6%96%AD" target="_blank" rel="noopener">hexo官方文档</a></p>
+</blockquote>
+
 <hr>
 <h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><p>在完成以上配置后，在博客项目根目录下执行</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
@@ -526,9 +531,13 @@
         <span class="has-mr-6">5.2.1</span>
         <span>默认模板内容</span>
         </a></li><li>
-        <a class="is-flex" href="#自定义内容">
+        <a class="is-flex" href="#自定义模板内容">
         <span class="has-mr-6">5.2.2</span>
-        <span>自定义内容</span>
+        <span>自定义模板内容</span>
+        </a></li><li>
+        <a class="is-flex" href="#文章正文">
+        <span class="has-mr-6">5.2.3</span>
+        <span>文章正文</span>
         </a></li></ul></li></ul></li><li>
         <a class="is-flex" href="#运行">
         <span class="has-mr-6">6</span>

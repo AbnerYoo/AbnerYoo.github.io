@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://g-lab.xyz/tools/index.html</loc>
+    
+    <lastmod>2019-12-27T02:30:12.172Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://g-lab.xyz/2019/hexo-icarus-build-customize/</loc>
     
     <lastmod>2019-11-05T05:57:49.349Z</lastmod>
@@ -36,4 +43,11 @@
     
   </url>
   
+     
+  <url>
+    <loc>https://tools.g-lab.xyz/time_clac</loc>
+    
+   <lastmod>2019-12-27T02:30:12.172Z</lastmod>
+    
+  </url>
 </urlset>

@@ -7,14 +7,14 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>标签: aria2配置 - 车库Lab-分享最新最特别的小技能</title>
+<title>归档: 2020 - 车库Lab-分享最新最特别的小技能</title>
 
 
     <meta name="description" content="分享最新最特别的小技能">
 <meta name="keywords" content="车库Lab,G-Lab,技能,互联网,IT">
 <meta property="og:type" content="website">
 <meta property="og:title" content="车库Lab-分享最新最特别的小技能">
-<meta property="og:url" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;tags&#x2F;aria2%E9%85%8D%E7%BD%AE&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;archives&#x2F;2020&#x2F;index.html">
 <meta property="og:site_name" content="车库Lab-分享最新最特别的小技能">
 <meta property="og:description" content="分享最新最特别的小技能">
 <meta property="og:locale" content="zh-CN">
@@ -131,142 +131,37 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+
+<div class="card widget">
     <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">aria2配置</a></li>
-        </ul>
-        </nav>
+        <h3 class="tag is-link">
+        2020
+        </h3>
+        <div class="timeline">
+        
+            <article class="media">
+                
+                <div class="media-content">
+                    <div class="content">
+                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2020-02-27T13:16:26.000Z">2020-02-27</time>
+                        <a href="/2020/tools-introduction-time-calculator/" class="title has-link-black-ter is-size-6 has-text-weight-normal">小工具使用说明-时间计算器</a>
+                        <div class="level article-meta is-mobile">
+                            <div class="level-left">
+                                
+                                <div class="level-item is-size-7 is-uppercase">
+                                <a class="has-link-grey -link" href="/categories/%E5%B0%8F%E5%B7%A5%E5%85%B7/">小工具</a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        
+        </div>
     </div>
 </div>
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-26T11:24:14.000Z">2019-10-26</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/aria2/">aria2</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/aria2/%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/">配置说明</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    16 分钟 读完 (大约 2390 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/aria2-options-2-http-ftp-sftp-option/">aria2选项说明--HTTP/FTP/SFTP选项</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>以下均根据官方文档及相关翻译整合和梳理</em></p>
-<h1 id="HTTP-FTP-SFTP选项"><a href="#HTTP-FTP-SFTP选项" class="headerlink" title="HTTP/FTP/SFTP选项"></a>HTTP/FTP/SFTP选项</h1><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--all-proxy=&lt;PROXY&gt;</span><br></pre></td></tr></table></figure>
-<p>为所有协议的传输使用代理服务器。用 “”（空字串）来覆盖之前定义的代理。您可以使用 <code>--http-proxy</code>，<code>--https-proxy</code> 和 <code>--ftp-proxy</code> 选项为某个协议指定代理服务器。该选项对所有下载有效。<br>代理地址格式<code>[http://][USER:PASSWORD@]HOST[:PORT]</code>。另请参见： 环境（ENVIRONMENT）章节。</p>
-<blockquote>
-<p>如果用户名和密码被内置在了代理地址中，并且还通过<em>–{http,https,ftp,all}-proxy-{user,passwd}</em>选项来指定，这些之后被指定的选项覆盖之前的选项。例如，如果你在aria2.conf配置文件中指定<code>http-proxy-user=myname, http-proxy-passwd=mypass</code>并且在命令行也指定<code>--http-proxy=&quot;http://proxy&quot;</code><br>， 然后你会得到HTTP代理设置<code>http://proxy</code>带上用户名<code>myname</code>和密码<code>mypass</code>。</p>
-<p>另一个例子，如果你在命令行指定<code>--http-proxy=&quot;http://user:pass@proxy&quot; --http-proxy-user=&quot;myname&quot; --http-proxy-passwd=&quot;mypass&quot;</code>，然后你会得到HTTP代理设置<code>http://proxy</code>带上用户名<code>myname</code>和密码<code>mypass</code>。</p>
-<p>再一个例子，如果你在命令行指定<code>--http-proxy-user=&quot;myname&quot; --http-proxy-passwd=&quot;mypass&quot; --http-proxy=&quot;http://user:pass@proxy&quot;</code>，然后你会得到HTTP代理设置<code>http://proxy</code>带上用户名<code>user</code>和密码<code>pass</code>。</p>
-</blockquote>
-        </div>
-		
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/aria2-options-2-http-ftp-sftp-option/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-21T12:36:33.000Z">2019-10-21</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/aria2/">aria2</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/aria2/%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/">配置说明</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5 分钟 读完 (大约 818 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/aria2-options-1-basic-option/">aria2选项说明--基础选项</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>以下均根据官方文档及相关翻译整合和梳理</em></p>
-<h1 id="基础选项"><a href="#基础选项" class="headerlink" title="基础选项"></a>基础选项</h1><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-d, --dir=&lt;DIR&gt;</span><br></pre></td></tr></table></figure>
-<p>保存下载文件的路径</p>
-        </div>
-		
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/aria2-options-1-basic-option/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 </div>

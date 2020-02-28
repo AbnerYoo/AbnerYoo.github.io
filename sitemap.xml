@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://g-lab.xyz/2019/aria2-options-2-http-ftp-sftp-option/</loc>
+    
+    <lastmod>2020-02-28T10:16:38.107Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://g-lab.xyz/2020/android-studio-install/</loc>
     
     <lastmod>2020-02-28T10:00:57.041Z</lastmod>
@@ -44,30 +51,24 @@
   </url>
   
   <url>
-    <loc>https://g-lab.xyz/2019/aria2-options-2-http-ftp-sftp-option/</loc>
-    
-    <lastmod>2019-10-27T12:19:25.539Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://g-lab.xyz/2019/aria2-options-1-basic-option/</loc>
     
     <lastmod>2019-10-27T12:19:25.538Z</lastmod>
     
   </url>
   
+  
   <url>
     <loc>https://tools.g-lab.xyz/</loc>
     
-   <lastmod>2020-02-28T10:00:57.041Z</lastmod>
+   <lastmod>2020-02-28T10:16:38.107Z</lastmod>
     
   </url>
-      
+	  
   <url>
     <loc>https://tools.g-lab.xyz/time_clac</loc>
     
-   <lastmod>2020-02-28T10:00:57.041Z</lastmod>
+   <lastmod>2020-02-28T10:16:38.107Z</lastmod>
     
   </url>
 </urlset>

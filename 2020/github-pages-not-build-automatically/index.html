@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.0.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>【问题处理】GitHub Pages不自动构建 - 车库Lab-分享最新最特别的小技能</title>
+
+
+    <meta name="description" content="问题现象将编译生成的静态页面PUSH到GitHub仓库后，访问对应页面URL，发现实际展示页面并没有更新，依旧是提交前的内容。">
+<meta name="keywords" content="问题处理,GitHub">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【问题处理】GitHub Pages不自动构建">
+<meta property="og:url" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;2020&#x2F;github-pages-not-build-automatically&#x2F;index.html">
+<meta property="og:site_name" content="车库Lab-分享最新最特别的小技能">
+<meta property="og:description" content="问题现象将编译生成的静态页面PUSH到GitHub仓库后，访问对应页面URL，发现实际展示页面并没有更新，依旧是提交前的内容。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;images&#x2F;og_image.png">
+<meta property="og:updated_time" content="2020-02-28T06:45:22.528Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;images&#x2F;og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.ico">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150820738-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-150820738-1');
+</script>
+
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+	<script data-ad-client="ca-pub-5507837965607182" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/og_image.png" alt="【问题处理】GitHub Pages不自动构建" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">主页</a>
+                
+                <a class="navbar-item"
+                href="http://tools.g-lab.xyz">小工具</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/categories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-9-desktop is-9-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-02-28T04:00:00.000Z">2020-02-28</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">问题处理</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5 分钟 读完 (大约 722 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                【问题处理】GitHub Pages不自动构建
+            
+        </h1>
+        <div class="content">
+            <h1 id="问题现象"><a href="#问题现象" class="headerlink" title="问题现象"></a>问题现象</h1><p>将编译生成的静态页面PUSH到GitHub仓库后，访问对应页面URL，发现实际展示页面并没有更新，依旧是提交前的内容。</p>
+<a id="more"></a>
+
+<h1 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h1><h2 id="1-确认PUSH是否成功"><a href="#1-确认PUSH是否成功" class="headerlink" title="1.确认PUSH是否成功"></a>1.确认PUSH是否成功</h2><p>首先点击GitHub仓库的<code>commits</code>Tab查看提交记录。<br><img src="/images/article/2020/github_commits.png" alt="查看提交记录"><br>经确认存在提交记录，且查看对应文件也是最新的内容。那么排除该情况。</p>
+<h2 id="2-禁用缓存"><a href="#2-禁用缓存" class="headerlink" title="2.禁用缓存"></a>2.禁用缓存</h2><p>因为使用了Cloudflare提供的服务，并且开启了缓存功能（虽然想想不太可能缓存逻辑这么傻。。。），但还是尝试在Cloudflare上清理了缓存。有以下两种方式排除缓存影响。</p>
+<ol>
+<li>开启开发模式<br>在Cloudflare控制台的<code>Overview</code>视图下，在右侧<code>Quick Actions</code>栏有一个<code>Development Mode</code>开关，开启该功能后即可进入开发模式，会绕过缓存，响应网站的实时更新内容。<br><img src="/images/article/2020/development_mode.png" alt="开启开发模式"></li>
+<li>清理缓存<br>在Cloudflare控制台的<code>Caching</code>视图下可操作清理缓存。如下图所示，点击<code>Purge Cache</code>功能模块的<code>Purge Everything</code>按钮即可。<br><img src="/images/article/2020/purge_cache.png" alt="清理缓存"></li>
+</ol>
+<p>经过排除缓存影响后，发现问题仍未解决，排除该情况。</p>
+<h2 id="3-查看GitHub-Pages构建情况"><a href="#3-查看GitHub-Pages构建情况" class="headerlink" title="3.查看GitHub Pages构建情况"></a>3.查看GitHub Pages构建情况</h2><p>回过头再来看GitHub的提交记录，发现上次的提交记录上有个绿色的勾，点击该图标后显示对应提交检测通过，并且已经被GitHub Pages成功构建。<br><img src="/images/article/2020/github_pages_build.png" alt="GitHub Pages构建"><br>反观这次提交，没有对应的构建信息，那么说明最新的提交未被GitHub Pages构建，进而没有能真正的被部署。基本能确定，是该情况导致了问题。</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>经过<a href="https://www.google.com/search?newwindow=1&hl=zh-CN&authuser=0&biw=1280&bih=578&ei=YZBYXuXuAciU-gTSkr_4Cw&q=github+pages+%E4%B8%8D%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA&oq=github+pages+%E4%B8%8D%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA&gs_l=psy-ab.3...1164.1164..3411...0.0..0.492.1308.3-1j2......0....1..gws-wiz.w6n5c_6dwMI&ved=0ahUKEwilo7KIrvPnAhVIip4KHVLJD78Q4dUDCAs&uact=5" target="_blank" rel="noopener">Google</a>找到了一篇博客文章提到了解决方案<a href="https://blog.cotes.info/posts/solving-gh-pages-is-not-built-automatically/" target="_blank" rel="noopener">解决 GitHub Pages 不自动构建</a>，大意是提交过程中触发了GitHub的某些机制，导致GitHub Pages没有自动构建，这篇文章也提供了相应解决办法。<br>不过因为是单次提交触发机制导致，所以再次提交后也可以触发GitHub Pages自动构建，因此除了该文章提到的方法，更简单的方法可以是稍作修改后<strong>再次PUSH</strong>，以触发GitHub Pages自动构建。</p>
+
+        </div>
+		
+            <ul class="post-copyright">
+            <li><strong>本文标题：</strong><a href="https://g-lab.xyz/2020/github-pages-not-build-automatically/">【问题处理】GitHub Pages不自动构建</a></li>
+            <li><strong>本文作者：</strong><a href="https://g-lab.xyz">车库Lab</a></li>
+            <li><strong>本文链接：</strong><a href="https://g-lab.xyz/2020/github-pages-not-build-automatically/">https://g-lab.xyz/2020/github-pages-not-build-automatically/</a></li>
+            <li><strong>发布时间：</strong>2020-02-28</li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+            </li>
+            </ul>
+        
+        
+		<hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/GitHub/" rel="tag">GitHub</a>, <a class="has-link-grey -link" href="/tags/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/" rel="tag">问题处理</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
+    </div>
+</div>
+
+
+<div class="card">
+    <div class="card-content">
+		<ins class="adsbygoogle"
+			 style="display:block; text-align:center;"
+			 data-ad-layout="in-article"
+			 data-ad-format="fluid"
+			 data-ad-client="ca-pub-5507837965607182"
+			 data-ad-slot="6462191132"></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/android-studio-install/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">【Andriod入门】1-Android Studio安装</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/tools-introduction-time-calculator/">
+                <span class="level-item">【小工具手册】时间计算器</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+<div class="card">
+    <div class="card-content">
+		<ins class="adsbygoogle"
+			 style="display:block; text-align:center;"
+			 data-ad-layout="in-article"
+			 data-ad-format="fluid"
+			 data-ad-client="ca-pub-5507837965607182"
+			 data-ad-slot="3932709644"></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: true,
+        app_id: 'I1gqCqEE9HOtmeFlhxTrP64b-MdYXbMMI',
+        app_key: 'yFDI4nvx1zXLhP2cDLJqVdWe',
+        placeholder: '来一起畅言吧'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-3-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="is-rounded" src="/images/avatar.jpg" alt="G-lab">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        G-lab
+                    </p>
+                    
+                    
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        8
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        9
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        15
+                    </p>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://my.oschina.net/u/2404065" target="_blank">
+                关注我</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+				
+					<a class="level-item button is-white donate is-marginless"
+					title="wexin" href="javascript:void(0)">					
+					<i class="fab fa-weixin"></i>
+					<div class="qrcode"><img src="/images/qrcode_weixin.jpg" alt="wexin"></div>
+					</a>	
+				
+            
+				
+					<a class="level-item button is-white is-marginless" target="_blank"
+					title="oschina" href="https://my.oschina.net/u/2404065">
+					
+					<i class="fas fa-copyright"></i>
+					
+					</a>
+				
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#问题现象">
+        <span class="has-mr-6">1</span>
+        <span>问题现象</span>
+        </a></li><li>
+        <a class="is-flex" href="#问题分析">
+        <span class="has-mr-6">2</span>
+        <span>问题分析</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#1-确认PUSH是否成功">
+        <span class="has-mr-6">2.1</span>
+        <span>1.确认PUSH是否成功</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-禁用缓存">
+        <span class="has-mr-6">2.2</span>
+        <span>2.禁用缓存</span>
+        </a></li><li>
+        <a class="is-flex" href="#3-查看GitHub-Pages构建情况">
+        <span class="has-mr-6">2.3</span>
+        <span>3.查看GitHub Pages构建情况</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#解决方案">
+        <span class="has-mr-6">3</span>
+        <span>解决方案</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+		<!-- 展示广告 -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-5507837965607182"
+			 data-ad-slot="1161693186"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://www.yh-blog.cn/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">YH的个人小站</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">www.yh-blog.cn</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="http://toc.lieme.cn/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">故事胶片</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">toc.lieme.cn</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow  ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Andriod/">
+            <span class="level-start">
+                <span class="level-item">Andriod</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/aria2/">
+            <span class="level-start">
+                <span class="level-item">aria2</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/aria2/%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/">
+            <span class="level-start">
+                <span class="level-item">配置说明</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/%E5%89%8D%E7%AB%AF/">
+            <span class="level-start">
+                <span class="level-item">前端</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/%E5%89%8D%E7%AB%AF/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+            <span class="level-start">
+                <span class="level-item">博客搭建</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/%E5%90%8E%E7%AB%AF/">
+            <span class="level-start">
+                <span class="level-item">后端</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/%E5%90%8E%E7%AB%AF/Node-js/">
+            <span class="level-start">
+                <span class="level-item">Node.js</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/%E5%B0%8F%E5%B7%A5%E5%85%B7/">
+            <span class="level-start">
+                <span class="level-item">小工具</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">
+            <span class="level-start">
+                <span class="level-item">问题处理</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Andriod/">
+                        <span class="tag">Andriod</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GitHub/">
+                        <span class="tag">GitHub</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Icarus/">
+                        <span class="tag">Icarus</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Node-js/">
+                        <span class="tag">Node.js</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/aria2/">
+                        <span class="tag">aria2</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/aria2%E9%80%89%E9%A1%B9/">
+                        <span class="tag">aria2选项</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/aria2%E9%85%8D%E7%BD%AE/">
+                        <span class="tag">aria2配置</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">
+                        <span class="tag">使用手册</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                        <span class="tag">博客搭建</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%90%8E%E7%AB%AF/">
+                        <span class="tag">后端</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%AE%89%E8%A3%85/">
+                        <span class="tag">安装</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/">
+                        <span class="tag">小工具</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%97%B6%E9%97%B4%E8%AE%A1%E7%AE%97%E5%99%A8/">
+                        <span class="tag">时间计算器</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">
+                        <span class="tag">问题处理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-28T07:00:00.000Z">2020-02-28</time></div>
+                    <a href="/2020/android-studio-install/" class="title has-link-black-ter is-size-6 has-text-weight-normal">【Andriod入门】1-Android Studio安装</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Andriod/">Andriod</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-28T04:00:00.000Z">2020-02-28</time></div>
+                    <a href="/2020/github-pages-not-build-automatically/" class="title has-link-black-ter is-size-6 has-text-weight-normal">【问题处理】GitHub Pages不自动构建</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">问题处理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-27T13:16:26.000Z">2020-02-27</time></div>
+                    <a href="/2020/tools-introduction-time-calculator/" class="title has-link-black-ter is-size-6 has-text-weight-normal">【小工具手册】时间计算器</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E5%B0%8F%E5%B7%A5%E5%85%B7/">小工具</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-04T10:37:53.000Z">2019-11-04</time></div>
+                    <a href="/2019/hexo-icarus-build-customize/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo博客搭建之Icarus主题--个性化修改篇</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a> / <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-28T12:30:24.000Z">2019-10-28</time></div>
+                    <a href="/2019/hexo-icarus-build-blog-get-started/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo博客搭建之Icarus主题--基础操作篇</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a> / <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            
+<div class="card widget">
+    <div class="card-content">
+		<!-- 展示广告 -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-5507837965607182"
+			 data-ad-slot="3449332212"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+    </div>
+</div>
+
+        
+        </div>
+    
+</div>
+
+				
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/og_image.png" alt="【问题处理】GitHub Pages不自动构建" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019-2020 车库Lab&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                <br>
+				<span id="busuanzi_container_site_pv">
+                <span id="busuanzi_value_site_pv">0</span>次访问
+                </span>
+                <span id="busuanzi_container_site_uv">
+                共<span id="busuanzi_value_site_uv">0</span>个访客
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+<script src="/js/animation.js"></script>
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+    
+    
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" target="_blank" rel="noopener">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+    
+    
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

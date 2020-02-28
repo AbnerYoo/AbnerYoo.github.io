@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://g-lab.xyz/2020/android-studio-install/</loc>
+    
+    <lastmod>2020-02-28T10:00:57.041Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://g-lab.xyz/2020/tools-introduction-time-calculator/</loc>
     
-    <lastmod>2020-02-27T14:51:23.931Z</lastmod>
+    <lastmod>2020-02-28T06:46:12.224Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://g-lab.xyz/2020/github-pages-not-build-automatically/</loc>
+    
+    <lastmod>2020-02-28T06:45:22.528Z</lastmod>
     
   </url>
   
@@ -43,19 +57,17 @@
     
   </url>
   
-  
+  <url>
+    <loc>https://tools.g-lab.xyz/</loc>
+    
+   <lastmod>2020-02-28T10:00:57.041Z</lastmod>
+    
+  </url>
       
   <url>
     <loc>https://tools.g-lab.xyz/time_clac</loc>
     
-   <lastmod>2019-02-28T02:51:23.931Z/lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tools.g-lab.xyz/</loc>
-    
-   <lastmod>2019-02-28T02:51:23.931Z</lastmod>
+   <lastmod>2020-02-28T10:00:57.041Z</lastmod>
     
   </url>
 </urlset>

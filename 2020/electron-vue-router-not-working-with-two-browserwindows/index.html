@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.0.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>【问题处理】Electron-Vue 无法使用路由打开新窗口 - 车库Lab-分享最新最特别的小技能</title>
+
+
+    <meta name="description" content="问题现象在路由中配置如下： 12345678routes: [    &amp;#123;      path: &amp;apos;&#x2F;pathA&#x2F;:paramA&amp;apos;,      name: &amp;apos;path-a-page&amp;apos;,      component: require(&amp;apos;@&#x2F;components&#x2F;PathAPage&amp;apos;).default    &amp;#125;,    ……  ]">
+<meta name="keywords" content="问题处理,前端,Electron-Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【问题处理】Electron-Vue 无法使用路由打开新窗口">
+<meta property="og:url" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;2020&#x2F;electron-vue-router-not-working-with-two-browserwindows&#x2F;index.html">
+<meta property="og:site_name" content="车库Lab-分享最新最特别的小技能">
+<meta property="og:description" content="问题现象在路由中配置如下： 12345678routes: [    &amp;#123;      path: &amp;apos;&#x2F;pathA&#x2F;:paramA&amp;apos;,      name: &amp;apos;path-a-page&amp;apos;,      component: require(&amp;apos;@&#x2F;components&#x2F;PathAPage&amp;apos;).default    &amp;#125;,    ……  ]">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;images&#x2F;og_image.png">
+<meta property="og:updated_time" content="2020-05-22T05:52:58.347Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;images&#x2F;og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.ico">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150820738-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-150820738-1');
+</script>
+
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+	<script data-ad-client="ca-pub-5507837965607182" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/og_image.png" alt="【问题处理】Electron-Vue 无法使用路由打开新窗口" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">主页</a>
+                
+                <a class="navbar-item"
+                href="http://tools.g-lab.xyz">小工具</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/categories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-9-desktop is-9-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-05-22T04:30:00.000Z">2020-05-22</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">问题处理</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 分钟 读完 (大约 315 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                【问题处理】Electron-Vue 无法使用路由打开新窗口
+            
+        </h1>
+        <div class="content">
+            <h1 id="问题现象"><a href="#问题现象" class="headerlink" title="问题现象"></a>问题现象</h1><p>在路由中配置如下：</p>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: <span class="hljs-string">'/pathA/:paramA'</span>,</span><br><span class="line">      name: <span class="hljs-string">'path-a-page'</span>,</span><br><span class="line">      component: <span class="hljs-built_in">require</span>(<span class="hljs-string">'@/components/PathAPage'</span>).default</span><br><span class="line">    &#125;,</span><br><span class="line">    ……</span><br><span class="line">  ]</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<p>在主进程中，使用如下方法创建新窗口</p>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> pathAURL = process.env.NODE_ENV === <span class="hljs-string">'development'</span></span><br><span class="line"> ? <span class="hljs-string">`http://localhost:9080/pathA/`</span></span><br><span class="line"> : <span class="hljs-string">`file://<span class="hljs-subst">$&#123;__dirname&#125;</span>/index.html/pathA/`</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow(&#123;</span><br><span class="line">	height: mainWindow.width * <span class="hljs-number">0.8</span>,</span><br><span class="line">	useContentSize: <span class="hljs-literal">true</span>,</span><br><span class="line">	width: mainWindow.height * <span class="hljs-number">0.8</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">win.setMenuBarVisibility(<span class="hljs-literal">false</span>)</span><br><span class="line">win.loadURL(pathAURL + paramA)</span><br><span class="line"></span><br><span class="line">win.on(<span class="hljs-string">'closed'</span>, () =&gt; &#123;</span><br><span class="line">	win = <span class="hljs-literal">null</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>实际效果如下，提示找不到路径<br><img src="/images/article/2020/electron-vue-router-404.png" alt="找不到页面"></p>
+<!-- more -->
+
+<h1 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h1><p>经过查找资料，在<a href="https://github.com/SimulatedGREG/electron-vue/issues/207#issuecomment-299579742" target="_blank" rel="noopener">Electron-Vue作者的回复</a>中找到了答案。</p>
+<p>Electron-Vue的路由默认是使用的<code>hash</code>模式（Vue Router默认就是<code>hash</code>模式），在该模式下，主页路径最后是会带有<code>#</code>。<br>例如：<a href="http://localhost:9080/#" target="_blank" rel="noopener">http://localhost:9080/#</a></p>
+<p>因此，需要在路径中加入这个<code>#</code>，使路径完整。</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>在主进程中，新窗口的路由路径改成如下</p>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> pathAURL = process.env.NODE_ENV === <span class="hljs-string">'development'</span></span><br><span class="line"> ? <span class="hljs-string">`http://localhost:9080/#/pathA/`</span></span><br><span class="line"> : <span class="hljs-string">`file://<span class="hljs-subst">$&#123;__dirname&#125;</span>/index.html#pathA/`</span></span><br></pre></td></tr></table></figure>
+
+<p>如果想使用常规不带<code>#</code>的路径，那么就需要将路由配置改成<code>history</code>模式，具体参考<a href="https://router.vuejs.org/zh/api/#mode" target="_blank" rel="noopener">Vue Router使用手册</a></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/SimulatedGREG/electron-vue/issues/207" target="_blank" rel="noopener">https://github.com/SimulatedGREG/electron-vue/issues/207</a><br><a href="https://router.vuejs.org/zh/api/#mode" target="_blank" rel="noopener">https://router.vuejs.org/zh/api/#mode</a></p>
+
+        </div>
+		
+            <ul class="post-copyright">
+            <li><strong>本文标题：</strong><a href="https://g-lab.xyz/2020/electron-vue-router-not-working-with-two-browserwindows/">【问题处理】Electron-Vue 无法使用路由打开新窗口</a></li>
+            <li><strong>本文作者：</strong><a href="https://g-lab.xyz">车库Lab</a></li>
+            <li><strong>本文链接：</strong><a href="https://g-lab.xyz/2020/electron-vue-router-not-working-with-two-browserwindows/">https://g-lab.xyz/2020/electron-vue-router-not-working-with-two-browserwindows/</a></li>
+            <li><strong>发布时间：</strong>2020-05-22</li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+            </li>
+            </ul>
+        
+        
+		<hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Electron-Vue/" rel="tag">Electron-Vue</a>, <a class="has-link-grey -link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a>, <a class="has-link-grey -link" href="/tags/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/" rel="tag">问题处理</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
+    </div>
+</div>
+
+
+<div class="card">
+    <div class="card-content">
+		<ins class="adsbygoogle"
+			 style="display:block; text-align:center;"
+			 data-ad-layout="in-article"
+			 data-ad-format="fluid"
+			 data-ad-client="ca-pub-5507837965607182"
+			 data-ad-slot="6462191132"></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/lowdb-data-not-sync/">
+                <span class="level-item">【问题处理】Lowdb 进程间数据不同步</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+<div class="card">
+    <div class="card-content">
+		<ins class="adsbygoogle"
+			 style="display:block; text-align:center;"
+			 data-ad-layout="in-article"
+			 data-ad-format="fluid"
+			 data-ad-client="ca-pub-5507837965607182"
+			 data-ad-slot="3932709644"></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: true,
+        app_id: 'I1gqCqEE9HOtmeFlhxTrP64b-MdYXbMMI',
+        app_key: 'yFDI4nvx1zXLhP2cDLJqVdWe',
+        placeholder: '来一起畅言吧'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-3-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="is-rounded" src="/images/avatar.jpg" alt="G-lab">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        G-lab
+                    </p>
+                    
+                    
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        13
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        9
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        20
+                    </p>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://my.oschina.net/u/2404065" target="_blank">
+                关注我</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+				
+					<a class="level-item button is-white donate is-marginless"
+					title="wexin" href="javascript:void(0)">					
+					<i class="fab fa-weixin"></i>
+					<div class="qrcode"><img src="/images/qrcode_weixin.jpg" alt="wexin"></div>
+					</a>	
+				
+            
+				
+					<a class="level-item button is-white is-marginless" target="_blank"
+					title="oschina" href="https://my.oschina.net/u/2404065">
+					
+					<i class="fas fa-copyright"></i>
+					
+					</a>
+				
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#问题现象">
+        <span class="has-mr-6">1</span>
+        <span>问题现象</span>
+        </a></li><li>
+        <a class="is-flex" href="#问题分析">
+        <span class="has-mr-6">2</span>
+        <span>问题分析</span>
+        </a></li><li>
+        <a class="is-flex" href="#解决方案">
+        <span class="has-mr-6">3</span>
+        <span>解决方案</span>
+        </a></li><li>
+        <a class="is-flex" href="#参考">
+        <span class="has-mr-6">4</span>
+        <span>参考</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+		<!-- 展示广告 -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-5507837965607182"
+			 data-ad-slot="1161693186"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://www.yh-blog.cn/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">YH的个人小站</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">www.yh-blog.cn</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="http://toc.lieme.cn/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">故事胶片</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">toc.lieme.cn</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow  ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Andriod/">
+            <span class="level-start">
+                <span class="level-item">Andriod</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/aria2/">
+            <span class="level-start">
+                <span class="level-item">aria2</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/aria2/%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/">
+            <span class="level-start">
+                <span class="level-item">配置说明</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/%E5%89%8D%E7%AB%AF/">
+            <span class="level-start">
+                <span class="level-item">前端</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/%E5%89%8D%E7%AB%AF/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+            <span class="level-start">
+                <span class="level-item">博客搭建</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/%E5%90%8E%E7%AB%AF/">
+            <span class="level-start">
+                <span class="level-item">后端</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/%E5%90%8E%E7%AB%AF/Node-js/">
+            <span class="level-start">
+                <span class="level-item">Node.js</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/%E5%B0%8F%E5%B7%A5%E5%85%B7/">
+            <span class="level-start">
+                <span class="level-item">小工具</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">
+            <span class="level-start">
+                <span class="level-item">问题处理</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Andriod/">
+                        <span class="tag">Andriod</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Electron-Vue/">
+                        <span class="tag">Electron-Vue</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Element/">
+                        <span class="tag">Element</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GitHub/">
+                        <span class="tag">GitHub</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Icarus/">
+                        <span class="tag">Icarus</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Lowdb/">
+                        <span class="tag">Lowdb</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/MySQL/">
+                        <span class="tag">MySQL</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Node-js/">
+                        <span class="tag">Node.js</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/aria2/">
+                        <span class="tag">aria2</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/aria2%E9%80%89%E9%A1%B9/">
+                        <span class="tag">aria2选项</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/aria2%E9%85%8D%E7%BD%AE/">
+                        <span class="tag">aria2配置</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">
+                        <span class="tag">使用手册</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="tag">前端</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                        <span class="tag">博客搭建</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%90%8E%E7%AB%AF/">
+                        <span class="tag">后端</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%AE%89%E8%A3%85/">
+                        <span class="tag">安装</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/">
+                        <span class="tag">小工具</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%97%B6%E9%97%B4%E8%AE%A1%E7%AE%97%E5%99%A8/">
+                        <span class="tag">时间计算器</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">
+                        <span class="tag">问题处理</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-22T04:30:00.000Z">2020-05-22</time></div>
+                    <a href="/2020/electron-vue-router-not-working-with-two-browserwindows/" class="title has-link-black-ter is-size-6 has-text-weight-normal">【问题处理】Electron-Vue 无法使用路由打开新窗口</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">问题处理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-22T04:20:00.000Z">2020-05-22</time></div>
+                    <a href="/2020/lowdb-data-not-sync/" class="title has-link-black-ter is-size-6 has-text-weight-normal">【问题处理】Lowdb 进程间数据不同步</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">问题处理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-22T04:10:00.000Z">2020-05-22</time></div>
+                    <a href="/2020/electron-vue-element-ui-table-show-unusual/" class="title has-link-black-ter is-size-6 has-text-weight-normal">【问题处理】Element UI 表格在 Electron-Vue 中不显示</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">问题处理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-22T04:00:00.000Z">2020-05-22</time></div>
+                    <a href="/2020/element-ui-dialog-style-optimize/" class="title has-link-black-ter is-size-6 has-text-weight-normal">【问题处理】Element UI 弹窗样式优化</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">问题处理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-13T04:00:00.000Z">2020-03-13</time></div>
+                    <a href="/2020/mysql-not-start-up/" class="title has-link-black-ter is-size-6 has-text-weight-normal">【问题处理】MySQL无法启动</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">问题处理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            
+<div class="card widget">
+    <div class="card-content">
+		<!-- 展示广告 -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-5507837965607182"
+			 data-ad-slot="3449332212"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+    </div>
+</div>
+
+        
+        </div>
+    
+</div>
+
+				
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/og_image.png" alt="【问题处理】Electron-Vue 无法使用路由打开新窗口" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019-2020 车库Lab&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                <br>
+				<span id="busuanzi_container_site_pv">
+                <span id="busuanzi_value_site_pv">0</span>次访问
+                </span>
+                <span id="busuanzi_container_site_uv">
+                共<span id="busuanzi_value_site_uv">0</span>个访客
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+<script src="/js/animation.js"></script>
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+    
+    
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" target="_blank" rel="noopener">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+    
+    
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

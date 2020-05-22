@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://g-lab.xyz/2020/electron-vue-element-ui-table-show-unusual/</loc>
+    
+    <lastmod>2020-05-22T05:54:50.882Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://g-lab.xyz/2020/electron-vue-router-not-working-with-two-browserwindows/</loc>
+    
+    <lastmod>2020-05-22T05:52:58.347Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://g-lab.xyz/2020/lowdb-data-not-sync/</loc>
+    
+    <lastmod>2020-05-22T02:16:44.100Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://g-lab.xyz/2020/element-ui-dialog-style-optimize/</loc>
+    
+    <lastmod>2020-05-22T01:09:05.172Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://g-lab.xyz/2020/mysql-not-start-up/</loc>
     
     <lastmod>2020-03-13T06:50:03.954Z</lastmod>
@@ -68,14 +96,14 @@
   <url>
     <loc>https://tools.g-lab.xyz/</loc>
     
-   <lastmod>2020-03-13T06:50:03.954Z</lastmod>
+   <lastmod>2020-05-22T05:54:50.882Z</lastmod>
     
   </url>
 	  
   <url>
     <loc>https://tools.g-lab.xyz/time_clac</loc>
     
-   <lastmod>2020-03-13T06:50:03.954Z</lastmod>
+   <lastmod>2020-05-22T05:54:50.882Z</lastmod>
     
   </url>
 </urlset>

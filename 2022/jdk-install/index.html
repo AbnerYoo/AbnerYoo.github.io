@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.1" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>【开发环境搭建】Java环境之JDK安装 - 车库Lab-分享最新最特别的小技能</title>
+
+
+    <meta name="description" content="Java版本的选择Java SE、Java EE和Java ME什么是Java SE？Java SE 全称是 Java Platform, Standard Edition，即Java标准版，也就是我们常说的JDK，它能用来开发和部署在桌面或服务端的Java程序。 什么是Java EE？Java EE 全称是 Java Platform, Enterprise Edition，即Java企业版，它">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【开发环境搭建】Java环境之JDK安装">
+<meta property="og:url" content="https://g-lab.xyz/2022/jdk-install/index.html">
+<meta property="og:site_name" content="车库Lab-分享最新最特别的小技能">
+<meta property="og:description" content="Java版本的选择Java SE、Java EE和Java ME什么是Java SE？Java SE 全称是 Java Platform, Standard Edition，即Java标准版，也就是我们常说的JDK，它能用来开发和部署在桌面或服务端的Java程序。 什么是Java EE？Java EE 全称是 Java Platform, Enterprise Edition，即Java企业版，它">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://g-lab.xyz/images/og_image.png">
+<meta property="article:published_time" content="2022-01-26T02:18:26.000Z">
+<meta property="article:modified_time" content="2022-01-26T13:48:51.943Z">
+<meta property="article:author" content="车库Lab">
+<meta property="article:tag" content="环境搭建">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="JDK">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://g-lab.xyz/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.ico">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150820738-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-150820738-1');
+</script>
+
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+	<script data-ad-client="ca-pub-5507837965607182" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/og_image.png" alt="【开发环境搭建】Java环境之JDK安装" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">主页</a>
+                
+                <a class="navbar-item"
+                href="http://tools.g-lab.xyz">小工具</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/categories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-9-desktop is-9-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2022-01-26T02:18:26.000Z">2022-01-26</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%E5%90%8E%E7%AB%AF/Java/">Java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    8 分钟 读完 (大约 1248 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                【开发环境搭建】Java环境之JDK安装
+            
+        </h1>
+        <div class="content">
+            <html><head></head><body><h1 id="Java版本的选择"><a href="#Java版本的选择" class="headerlink" title="Java版本的选择"></a>Java版本的选择</h1><h2 id="Java-SE、Java-EE和Java-ME"><a href="#Java-SE、Java-EE和Java-ME" class="headerlink" title="Java SE、Java EE和Java ME"></a>Java SE、Java EE和Java ME</h2><h3 id="什么是Java-SE？"><a href="#什么是Java-SE？" class="headerlink" title="什么是Java SE？"></a>什么是Java SE？</h3><p>Java SE 全称是 Java Platform, Standard Edition，即Java标准版，也就是我们常说的JDK，它能用来开发和部署在桌面或服务端的Java程序。</p>
+<h3 id="什么是Java-EE？"><a href="#什么是Java-EE？" class="headerlink" title="什么是Java EE？"></a>什么是Java EE？</h3><p>Java EE 全称是 Java Platform, Enterprise Edition，即Java企业版，它是在Java SE的基础上进行了拓展，提供Web服务、组建模型、管理和通信API，一般用于企业级开发。</p>
+<h3 id="什么是Java-ME？"><a href="#什么是Java-ME？" class="headerlink" title="什么是Java ME？"></a>什么是Java ME？</h3><p>Java ME 全称是 Java Platform, Micro Edition，即Java小微版，它为运行在移动和嵌入式等硬件资源有限的设备上，为应用程序提供Java环境，通常用于手机、机顶盒、蓝光播放器、数字媒体设备、M2M 模块、打印机以及其他设备。</p>
+<p><em>作为一般Java开发人员，我们需要选择的版本是<strong>Java SE</strong>。</em></p>
+<a id="more"></a>
+<h1 id="JDK和JRE"><a href="#JDK和JRE" class="headerlink" title="JDK和JRE"></a>JDK和JRE</h1><h2 id="什么是JRE？"><a href="#什么是JRE？" class="headerlink" title="什么是JRE？"></a>什么是JRE？</h2><p>JRE 全称是 Java Runtime Environment，从字面上可以看出，这是Java的运行环境。是保证Java程序能够运行的基础。它包含有Java虚拟机、Java核心类库和一些支持文件。</p>
+<h2 id="什么是JDK？"><a href="#什么是JDK？" class="headerlink" title="什么是JDK？"></a>什么是JDK？</h2><p>JDK 全称是 Java Development Kit，直译便是Java开发工具包。它包含有JRE，毕竟Java程序想要运行，必须得有相应的环境。除此之外，JDK还包含Java类库和Java工具。</p>
+<p><em>因此，作为Java开发人员，我们需要安装的便是<strong>JDK</strong>。</em></p>
+<h1 id="Java-SE版本的选择"><a href="#Java-SE版本的选择" class="headerlink" title="Java SE版本的选择"></a>Java SE版本的选择</h1><p>2019年4月16日，Oracle发布了新版本JDK 8u211，并同时更新了开源协议，从原先的BCL更换为OTN。这意味着从8u211开始，使用Java开发的应用用于商业目的，都需要向Oracle付费。</p>
+<p><img src="/images/article/2022/jdk8_download_introduce.png" alt="JDK8下载页介绍"></p>
+<p>如果只是用于个人开发，并且想体验最新特性，那么我们可以下载使用最新的版本。 如果后续会用于商业环境，那么还是建议使用8u201或者8u202版本，或者是OpenJDK等其他开源实现。</p>
+<h2 id="8u201还是8u202？"><a href="#8u201还是8u202？" class="headerlink" title="8u201还是8u202？"></a>8u201还是8u202？</h2><p>Oracle官方有相应的说明<a href="https://www.oracle.com/java/technologies/javase/jdk-version-number-scheme.html" target="_blank" rel="noopener" title="JDK版本号命名规则">JDK版本号命名规则</a>，简而言之，就是奇数号版本是带有必要的安全更新，是官方强烈建议更新的。而偶数号则是除重要更新之外的其他更新或是新特性。 <em>因此，作为初学者，我们可以选择安装<strong>JDK 8u201</strong>。</em></p>
+<h1 id="JDK-下载"><a href="#JDK-下载" class="headerlink" title="JDK 下载"></a>JDK 下载</h1><h2 id="JDK-8u201-下载"><a href="#JDK-8u201-下载" class="headerlink" title="JDK 8u201 下载"></a>JDK 8u201 下载</h2><p>直接访问<a href="https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html" target="_blank" rel="noopener" title="JDK 8u201下载">JDK 8u201下载</a>，根据页面提示进行下载。</p>
+<h2 id="JDK-最新版下载"><a href="#JDK-最新版下载" class="headerlink" title="JDK 最新版下载"></a>JDK 最新版下载</h2><p>如果是下载最新版本，则可以根据Oracle官方页面提示，直接选择对应大版本下载，这里给出下载网址<a href="https://www.oracle.com/java/technologies/javase-downloads.html" target="_blank" rel="noopener" title="JDK最新版本下载页面">JDK最新版本下载</a>。</p>
+<h2 id="JDK-历史版本下载"><a href="#JDK-历史版本下载" class="headerlink" title="JDK 历史版本下载"></a>JDK 历史版本下载</h2><p>如果还需要下载其他之前版本的JDK，可以访问<a href="https://www.oracle.com/java/technologies/oracle-java-archive-downloads.html" target="_blank" rel="noopener" title="Java历史版本">Java历史版本</a>，选择相应版本下载。</p>
+<h1 id="JDK安装"><a href="#JDK安装" class="headerlink" title="JDK安装"></a>JDK安装</h1><h2 id="基础安装"><a href="#基础安装" class="headerlink" title="基础安装"></a>基础安装</h2><p>运行下载的安装包，根据提示进行安装（通常都是“下一步”），<strong>建议安装路径采用英文</strong>。本例假设安装路径为“D:\Softwares\Java”。</p>
+<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><p>这个步骤比较重要，如果不配置环境变量的话，可能会无法正常使用Java。</p>
+<ol>
+<li>右击“我的电脑”或“此电脑”，在弹出的菜单中选择“属性”。</li>
+<li>选择“高级系统设置”。</li>
+</ol>
+<p><img src="/images/article/2022/windows_advanced_system_setting.png" alt="高级系统设置"></p>
+<ol start="3">
+<li>选择“环境变量”。</li>
+</ol>
+<p><img src="/images/article/2022/windows_environment_variable.png" alt="环境变量"></p>
+<ol start="4">
+<li>在“系统变量”区域新建条目 。</li>
+</ol>
+<p><img src="/images/article/2022/windows_system_variable.png" alt="系统变量"></p>
+<p>变量名为<code>JAVA_HOME</code>，变量值为JDK的安装路径（即“基础安装”步骤中选择的”D:\Softwares\Java”）</p>
+<p><img src="/images/article/2022/windows_system_variable_java_home.png" alt="新建JAVA_HOME"></p>
+<ol start="5">
+<li>修改“Path”变量。</li>
+</ol>
+<p><img src="/images/article/2022/windows_system_variable_path.png" alt="修改Path变量"></p>
+<p>添加新路径<code>%JAVA_HOME%\bin</code></p>
+<p><img src="/images/article/2022/windows_system_variable_java_home_config.png" alt="添加JAVA_HOME"></p>
+<p>如果是较老的操作系统，则手动添加<code>%JAVA_HOME%\bin;</code>，注意不要忘了<code>;</code>。</p>
+<p><img src="/images/article/2022/windows_system_variable_java_home_config_old.png" alt="手动添加JAVA_HOME"></p>
+<h2 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h2><p>使用快捷键<code>win+R</code>，输入<code>cmd</code>呼出控制台，输入</p>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></tbody></table></figure>
+
+<p>出现以下提示，则说明已经正确安装。 </p>
+<p><img src="/images/article/2022/jdk_query_version.png" alt="JDK版本查看"></p>
+</body></html>
+        </div>
+		
+            <ul class="post-copyright">
+            <li><strong>本文标题：</strong><a href="https://g-lab.xyz/2022/jdk-install/">【开发环境搭建】Java环境之JDK安装</a></li>
+            <li><strong>本文作者：</strong><a href="https://g-lab.xyz">车库Lab</a></li>
+            <li><strong>本文链接：</strong><a href="https://g-lab.xyz/2022/jdk-install/">https://g-lab.xyz/2022/jdk-install/</a></li>
+            <li><strong>发布时间：</strong>2022-01-26</li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+            </li>
+            </ul>
+        
+        
+		<hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/JDK/" rel="tag">JDK</a>, <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>, <a class="has-link-grey -link" href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" rel="tag">环境搭建</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
+    </div>
+</div>
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label">自制小程序</h3>
+        <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content:flex-start; align-items: center;">
+            <div class="qrcode" style="flex-grow: 1;"><img src="/images/qrcode_mini_program.jpg"></div>
+            <div style="text-align: center; color: #7a7a7a;font-size: 2.5rem;flex-grow: 1;">
+                <p>扫一扫点外卖更优惠</p>
+                <p>还有更多购物优惠等你来拿</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+		<ins class="adsbygoogle"
+			 style="display:block; text-align:center;"
+			 data-ad-layout="in-article"
+			 data-ad-format="fluid"
+			 data-ad-client="ca-pub-5507837965607182"
+			 data-ad-slot="6462191132"></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/electron-vue-router-not-working-with-two-browserwindows/">
+                <span class="level-item">【问题处理】Electron-Vue 无法使用路由打开新窗口</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+<div class="card">
+    <div class="card-content">
+		<ins class="adsbygoogle"
+			 style="display:block; text-align:center;"
+			 data-ad-layout="in-article"
+			 data-ad-format="fluid"
+			 data-ad-client="ca-pub-5507837965607182"
+			 data-ad-slot="3932709644"></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: true,
+        app_id: 'I1gqCqEE9HOtmeFlhxTrP64b-MdYXbMMI',
+        app_key: 'yFDI4nvx1zXLhP2cDLJqVdWe',
+        placeholder: '来一起畅言吧'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-3-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="is-rounded" src="/images/avatar.jpg" alt="G-lab">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        G-lab
+                    </p>
+                    
+                    
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        14
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        10
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        23
+                    </p>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://my.oschina.net/u/2404065" target="_blank">
+                关注我</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+				
+					<a class="level-item button is-white donate is-marginless"
+					title="wexin" href="javascript:void(0)">					
+					<i class="fab fa-weixin"></i>
+					<div class="qrcode"><img src="/images/qrcode_weixin.jpg" alt="wexin"></div>
+					</a>	
+				
+            
+				
+					<a class="level-item button is-white is-marginless" target="_blank"
+					title="oschina" href="https://my.oschina.net/u/2404065">
+					
+					<i class="fas fa-copyright"></i>
+					
+					</a>
+				
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#Java版本的选择">
+        <span class="has-mr-6">1</span>
+        <span>Java版本的选择</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Java-SE、Java-EE和Java-ME">
+        <span class="has-mr-6">1.1</span>
+        <span>Java SE、Java EE和Java ME</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#什么是Java-SE？">
+        <span class="has-mr-6">1.1.1</span>
+        <span>什么是Java SE？</span>
+        </a></li><li>
+        <a class="is-flex" href="#什么是Java-EE？">
+        <span class="has-mr-6">1.1.2</span>
+        <span>什么是Java EE？</span>
+        </a></li><li>
+        <a class="is-flex" href="#什么是Java-ME？">
+        <span class="has-mr-6">1.1.3</span>
+        <span>什么是Java ME？</span>
+        </a></li></ul></li></ul></li><li>
+        <a class="is-flex" href="#JDK和JRE">
+        <span class="has-mr-6">2</span>
+        <span>JDK和JRE</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#什么是JRE？">
+        <span class="has-mr-6">2.1</span>
+        <span>什么是JRE？</span>
+        </a></li><li>
+        <a class="is-flex" href="#什么是JDK？">
+        <span class="has-mr-6">2.2</span>
+        <span>什么是JDK？</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Java-SE版本的选择">
+        <span class="has-mr-6">3</span>
+        <span>Java SE版本的选择</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#8u201还是8u202？">
+        <span class="has-mr-6">3.1</span>
+        <span>8u201还是8u202？</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#JDK-下载">
+        <span class="has-mr-6">4</span>
+        <span>JDK 下载</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#JDK-8u201-下载">
+        <span class="has-mr-6">4.1</span>
+        <span>JDK 8u201 下载</span>
+        </a></li><li>
+        <a class="is-flex" href="#JDK-最新版下载">
+        <span class="has-mr-6">4.2</span>
+        <span>JDK 最新版下载</span>
+        </a></li><li>
+        <a class="is-flex" href="#JDK-历史版本下载">
+        <span class="has-mr-6">4.3</span>
+        <span>JDK 历史版本下载</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#JDK安装">
+        <span class="has-mr-6">5</span>
+        <span>JDK安装</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#基础安装">
+        <span class="has-mr-6">5.1</span>
+        <span>基础安装</span>
+        </a></li><li>
+        <a class="is-flex" href="#配置环境变量">
+        <span class="has-mr-6">5.2</span>
+        <span>配置环境变量</span>
+        </a></li><li>
+        <a class="is-flex" href="#验证安装">
+        <span class="has-mr-6">5.3</span>
+        <span>验证安装</span>
+        </a></li></ul></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+      <div class="menu">
+        <h3 class="menu-label">自制小程序</h3>
+        <div style="text-align: center; color: #7a7a7a;">
+          <p>扫一扫点外卖更优惠</p>
+          <p>还有更多购物优惠等你来拿</p>
+        </div>
+      </div>
+		  <div class="qrcode"><img src="/images/qrcode_mini_program.jpg"></div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+		<!-- 展示广告 -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-5507837965607182"
+			 data-ad-slot="1161693186"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://my.oschina.net/u/2404065" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">风语者Wt</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">my.oschina.net</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow  ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Andriod/">
+            <span class="level-start">
+                <span class="level-item">Andriod</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/aria2/">
+            <span class="level-start">
+                <span class="level-item">aria2</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/aria2/%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/">
+            <span class="level-start">
+                <span class="level-item">配置说明</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/%E5%89%8D%E7%AB%AF/">
+            <span class="level-start">
+                <span class="level-item">前端</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/%E5%89%8D%E7%AB%AF/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+            <span class="level-start">
+                <span class="level-item">博客搭建</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/%E5%90%8E%E7%AB%AF/">
+            <span class="level-start">
+                <span class="level-item">后端</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/%E5%90%8E%E7%AB%AF/Java/">
+            <span class="level-start">
+                <span class="level-item">Java</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%E5%90%8E%E7%AB%AF/Node-js/">
+            <span class="level-start">
+                <span class="level-item">Node.js</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/%E5%B0%8F%E5%B7%A5%E5%85%B7/">
+            <span class="level-start">
+                <span class="level-item">小工具</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">
+            <span class="level-start">
+                <span class="level-item">问题处理</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Andriod/">
+                        <span class="tag">Andriod</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Electron-Vue/">
+                        <span class="tag">Electron-Vue</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Element/">
+                        <span class="tag">Element</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GitHub/">
+                        <span class="tag">GitHub</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Icarus/">
+                        <span class="tag">Icarus</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JDK/">
+                        <span class="tag">JDK</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java/">
+                        <span class="tag">Java</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Lowdb/">
+                        <span class="tag">Lowdb</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/MySQL/">
+                        <span class="tag">MySQL</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Node-js/">
+                        <span class="tag">Node.js</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/aria2/">
+                        <span class="tag">aria2</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/aria2%E9%80%89%E9%A1%B9/">
+                        <span class="tag">aria2选项</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/aria2%E9%85%8D%E7%BD%AE/">
+                        <span class="tag">aria2配置</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">
+                        <span class="tag">使用手册</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="tag">前端</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                        <span class="tag">博客搭建</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%90%8E%E7%AB%AF/">
+                        <span class="tag">后端</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%AE%89%E8%A3%85/">
+                        <span class="tag">安装</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/">
+                        <span class="tag">小工具</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%97%B6%E9%97%B4%E8%AE%A1%E7%AE%97%E5%99%A8/">
+                        <span class="tag">时间计算器</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+                        <span class="tag">环境搭建</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">
+                        <span class="tag">问题处理</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-01-26T02:18:26.000Z">2022-01-26</time></div>
+                    <a href="/2022/jdk-install/" class="title has-link-black-ter is-size-6 has-text-weight-normal">【开发环境搭建】Java环境之JDK安装</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a> / <a class="has-link-grey -link" href="/categories/%E5%90%8E%E7%AB%AF/Java/">Java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-22T04:30:00.000Z">2020-05-22</time></div>
+                    <a href="/2020/electron-vue-router-not-working-with-two-browserwindows/" class="title has-link-black-ter is-size-6 has-text-weight-normal">【问题处理】Electron-Vue 无法使用路由打开新窗口</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">问题处理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-22T04:20:00.000Z">2020-05-22</time></div>
+                    <a href="/2020/lowdb-data-not-sync/" class="title has-link-black-ter is-size-6 has-text-weight-normal">【问题处理】Lowdb 进程间数据不同步</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">问题处理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-22T04:10:00.000Z">2020-05-22</time></div>
+                    <a href="/2020/electron-vue-element-ui-table-show-unusual/" class="title has-link-black-ter is-size-6 has-text-weight-normal">【问题处理】Element UI 表格在 Electron-Vue 中不显示</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">问题处理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-22T04:00:00.000Z">2020-05-22</time></div>
+                    <a href="/2020/element-ui-dialog-style-optimize/" class="title has-link-black-ter is-size-6 has-text-weight-normal">【问题处理】Element UI 弹窗样式优化</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">问题处理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            
+<div class="card widget">
+    <div class="card-content">
+		<!-- 展示广告 -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-5507837965607182"
+			 data-ad-slot="3449332212"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+    </div>
+</div>
+
+        
+        </div>
+    
+</div>
+
+				
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/og_image.png" alt="【开发环境搭建】Java环境之JDK安装" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019-2022 车库Lab&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                <br>
+				<span id="busuanzi_container_site_pv">
+                <span id="busuanzi_value_site_pv">0</span>次访问
+                </span>
+                <span id="busuanzi_container_site_uv">
+                共<span id="busuanzi_value_site_uv">0</span>个访客
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+<script src="/js/animation.js"></script>
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+    
+    
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" target="_blank" rel="noopener">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+    
+    
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

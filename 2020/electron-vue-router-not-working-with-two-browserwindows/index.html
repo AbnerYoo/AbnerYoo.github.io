@@ -3,25 +3,29 @@
 <head>
     <meta charset="utf-8" />
 
-<meta name="generator" content="Hexo 4.0.0" />
+<meta name="generator" content="Hexo 4.2.1" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 <title>【问题处理】Electron-Vue 无法使用路由打开新窗口 - 车库Lab-分享最新最特别的小技能</title>
 
 
-    <meta name="description" content="问题现象在路由中配置如下： 12345678routes: [    &amp;#123;      path: &amp;apos;&#x2F;pathA&#x2F;:paramA&amp;apos;,      name: &amp;apos;path-a-page&amp;apos;,      component: require(&amp;apos;@&#x2F;components&#x2F;PathAPage&amp;apos;).default    &amp;#125;,    ……  ]">
-<meta name="keywords" content="问题处理,前端,Electron-Vue">
+    <meta name="description" content="问题现象在路由中配置如下： 12345678routes: [    {      path: &#39;&#x2F;pathA&#x2F;:paramA&#39;,      name: &#39;path-a-page&#39;,      component: require(&#39;@&#x2F;components&#x2F;PathAPage&#39;).default    },    ……  ]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【问题处理】Electron-Vue 无法使用路由打开新窗口">
-<meta property="og:url" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;2020&#x2F;electron-vue-router-not-working-with-two-browserwindows&#x2F;index.html">
+<meta property="og:url" content="https://g-lab.xyz/2020/electron-vue-router-not-working-with-two-browserwindows/index.html">
 <meta property="og:site_name" content="车库Lab-分享最新最特别的小技能">
-<meta property="og:description" content="问题现象在路由中配置如下： 12345678routes: [    &amp;#123;      path: &amp;apos;&#x2F;pathA&#x2F;:paramA&amp;apos;,      name: &amp;apos;path-a-page&amp;apos;,      component: require(&amp;apos;@&#x2F;components&#x2F;PathAPage&amp;apos;).default    &amp;#125;,    ……  ]">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2020-05-22T05:52:58.347Z">
+<meta property="og:description" content="问题现象在路由中配置如下： 12345678routes: [    {      path: &#39;&#x2F;pathA&#x2F;:paramA&#39;,      name: &#39;path-a-page&#39;,      component: require(&#39;@&#x2F;components&#x2F;PathAPage&#39;).default    },    ……  ]">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://g-lab.xyz/images/og_image.png">
+<meta property="article:published_time" content="2020-05-22T04:30:00.000Z">
+<meta property="article:modified_time" content="2022-01-26T13:48:51.942Z">
+<meta property="article:author" content="车库Lab">
+<meta property="article:tag" content="问题处理">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="Electron-Vue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;images&#x2F;og_image.png">
+<meta name="twitter:image" content="https://g-lab.xyz/images/og_image.png">
 
 
 
@@ -171,13 +175,13 @@
             
         </h1>
         <div class="content">
-            <h1 id="问题现象"><a href="#问题现象" class="headerlink" title="问题现象"></a>问题现象</h1><p>在路由中配置如下：</p>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: <span class="hljs-string">'/pathA/:paramA'</span>,</span><br><span class="line">      name: <span class="hljs-string">'path-a-page'</span>,</span><br><span class="line">      component: <span class="hljs-built_in">require</span>(<span class="hljs-string">'@/components/PathAPage'</span>).default</span><br><span class="line">    &#125;,</span><br><span class="line">    ……</span><br><span class="line">  ]</span><br></pre></td></tr></table></figure>
+            <html><head></head><body><h1 id="问题现象"><a href="#问题现象" class="headerlink" title="问题现象"></a>问题现象</h1><p>在路由中配置如下：</p>
+<figure class="highlight js hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">routes: [</span><br><span class="line">    {</span><br><span class="line">      path: <span class="hljs-string">'/pathA/:paramA'</span>,</span><br><span class="line">      name: <span class="hljs-string">'path-a-page'</span>,</span><br><span class="line">      component: <span class="hljs-built_in">require</span>(<span class="hljs-string">'@/components/PathAPage'</span>).default</span><br><span class="line">    },</span><br><span class="line">    ……</span><br><span class="line">  ]</span><br></pre></td></tr></tbody></table></figure>
 
 <a id="more"></a>
 
 <p>在主进程中，使用如下方法创建新窗口</p>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> pathAURL = process.env.NODE_ENV === <span class="hljs-string">'development'</span></span><br><span class="line"> ? <span class="hljs-string">`http://localhost:9080/pathA/`</span></span><br><span class="line"> : <span class="hljs-string">`file://<span class="hljs-subst">$&#123;__dirname&#125;</span>/index.html/pathA/`</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow(&#123;</span><br><span class="line">	height: mainWindow.width * <span class="hljs-number">0.8</span>,</span><br><span class="line">	useContentSize: <span class="hljs-literal">true</span>,</span><br><span class="line">	width: mainWindow.height * <span class="hljs-number">0.8</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">win.setMenuBarVisibility(<span class="hljs-literal">false</span>)</span><br><span class="line">win.loadURL(pathAURL + paramA)</span><br><span class="line"></span><br><span class="line">win.on(<span class="hljs-string">'closed'</span>, () =&gt; &#123;</span><br><span class="line">	win = <span class="hljs-literal">null</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> pathAURL = process.env.NODE_ENV === <span class="hljs-string">'development'</span></span><br><span class="line"> ? <span class="hljs-string">`http://localhost:9080/pathA/`</span></span><br><span class="line"> : <span class="hljs-string">`file://<span class="hljs-subst">${__dirname}</span>/index.html/pathA/`</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">let</span> win = <span class="hljs-keyword">new</span> BrowserWindow({</span><br><span class="line">	height: mainWindow.width * <span class="hljs-number">0.8</span>,</span><br><span class="line">	useContentSize: <span class="hljs-literal">true</span>,</span><br><span class="line">	width: mainWindow.height * <span class="hljs-number">0.8</span></span><br><span class="line">})</span><br><span class="line"></span><br><span class="line">win.setMenuBarVisibility(<span class="hljs-literal">false</span>)</span><br><span class="line">win.loadURL(pathAURL + paramA)</span><br><span class="line"></span><br><span class="line">win.on(<span class="hljs-string">'closed'</span>, () =&gt; {</span><br><span class="line">	win = <span class="hljs-literal">null</span></span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure>
 
 <p>实际效果如下，提示找不到路径<br><img src="/images/article/2020/electron-vue-router-404.png" alt="找不到页面"></p>
 <!-- more -->
@@ -186,11 +190,11 @@
 <p>Electron-Vue的路由默认是使用的<code>hash</code>模式（Vue Router默认就是<code>hash</code>模式），在该模式下，主页路径最后是会带有<code>#</code>。<br>例如：<a href="http://localhost:9080/#" target="_blank" rel="noopener">http://localhost:9080/#</a></p>
 <p>因此，需要在路径中加入这个<code>#</code>，使路径完整。</p>
 <h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>在主进程中，新窗口的路由路径改成如下</p>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> pathAURL = process.env.NODE_ENV === <span class="hljs-string">'development'</span></span><br><span class="line"> ? <span class="hljs-string">`http://localhost:9080/#/pathA/`</span></span><br><span class="line"> : <span class="hljs-string">`file://<span class="hljs-subst">$&#123;__dirname&#125;</span>/index.html#pathA/`</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> pathAURL = process.env.NODE_ENV === <span class="hljs-string">'development'</span></span><br><span class="line"> ? <span class="hljs-string">`http://localhost:9080/#/pathA/`</span></span><br><span class="line"> : <span class="hljs-string">`file://<span class="hljs-subst">${__dirname}</span>/index.html#pathA/`</span></span><br></pre></td></tr></tbody></table></figure>
 
 <p>如果想使用常规不带<code>#</code>的路径，那么就需要将路由配置改成<code>history</code>模式，具体参考<a href="https://router.vuejs.org/zh/api/#mode" target="_blank" rel="noopener">Vue Router使用手册</a></p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/SimulatedGREG/electron-vue/issues/207" target="_blank" rel="noopener">https://github.com/SimulatedGREG/electron-vue/issues/207</a><br><a href="https://router.vuejs.org/zh/api/#mode" target="_blank" rel="noopener">https://router.vuejs.org/zh/api/#mode</a></p>
-
+</body></html>
         </div>
 		
             <ul class="post-copyright">
@@ -225,6 +229,21 @@
 
 <div class="card">
     <div class="card-content">
+        <h3 class="menu-label">自制小程序</h3>
+        <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content:flex-start; align-items: center;">
+            <div class="qrcode" style="flex-grow: 1;"><img src="/images/qrcode_mini_program.jpg"></div>
+            <div style="text-align: center; color: #7a7a7a;font-size: 2.5rem;flex-grow: 1;">
+                <p>扫一扫点外卖更优惠</p>
+                <p>还有更多购物优惠等你来拿</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
 		<ins class="adsbygoogle"
 			 style="display:block; text-align:center;"
 			 data-ad-layout="in-article"
@@ -244,6 +263,13 @@
 
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2022/jdk-install/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">【开发环境搭建】Java环境之JDK安装</span>
+            </a>
+        </div>
         
         
         <div class="level-end">
@@ -330,7 +356,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        13
+                        14
                     </p>
                 </div>
             </div>
@@ -340,7 +366,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        10
                     </p>
                 </div>
             </div>
@@ -350,7 +376,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        20
+                        23
                     </p>
                 </div>
             </div>
@@ -420,6 +446,21 @@
         
 <div class="card widget">
     <div class="card-content">
+      <div class="menu">
+        <h3 class="menu-label">自制小程序</h3>
+        <div style="text-align: center; color: #7a7a7a;">
+          <p>扫一扫点外卖更优惠</p>
+          <p>还有更多购物优惠等你来拿</p>
+        </div>
+      </div>
+		  <div class="qrcode"><img src="/images/qrcode_mini_program.jpg"></div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
 		<!-- 展示广告 -->
 		<ins class="adsbygoogle"
 			 style="display:block"
@@ -443,23 +484,12 @@
         <ul class="menu-list">
         
             <li>
-                <a class="level is-mobile" href="https://www.yh-blog.cn/" target="_blank">
+                <a class="level is-mobile" href="https://my.oschina.net/u/2404065" target="_blank">
                     <span class="level-left">
-                        <span class="level-item">YH的个人小站</span>
+                        <span class="level-item">风语者Wt</span>
                     </span>
                     <span class="level-right">
-                        <span class="level-item tag">www.yh-blog.cn</span>
-                    </span>
-                </a>
-            </li>
-        
-            <li>
-                <a class="level is-mobile" href="http://toc.lieme.cn/" target="_blank">
-                    <span class="level-left">
-                        <span class="level-item">故事胶片</span>
-                    </span>
-                    <span class="level-right">
-                        <span class="level-item tag">toc.lieme.cn</span>
+                        <span class="level-item tag">my.oschina.net</span>
                     </span>
                 </a>
             </li>
@@ -527,9 +557,17 @@
                 <span class="level-item">后端</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a><ul><li>
+        <a class="level is-marginless" href="/categories/%E5%90%8E%E7%AB%AF/Java/">
+            <span class="level-start">
+                <span class="level-item">Java</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/%E5%90%8E%E7%AB%AF/Node-js/">
             <span class="level-start">
                 <span class="level-item">Node.js</span>
@@ -599,6 +637,20 @@
                     <a class="tags has-addons" href="/tags/Icarus/">
                         <span class="tag">Icarus</span>
                         <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JDK/">
+                        <span class="tag">JDK</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java/">
+                        <span class="tag">Java</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -701,6 +753,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+                        <span class="tag">环境搭建</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">
                         <span class="tag">问题处理</span>
                         <span class="tag is-grey">6</span>
@@ -717,6 +776,19 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-01-26T02:18:26.000Z">2022-01-26</time></div>
+                    <a href="/2022/jdk-install/" class="title has-link-black-ter is-size-6 has-text-weight-normal">【开发环境搭建】Java环境之JDK安装</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a> / <a class="has-link-grey -link" href="/categories/%E5%90%8E%E7%AB%AF/Java/">Java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -770,19 +842,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-13T04:00:00.000Z">2020-03-13</time></div>
-                    <a href="/2020/mysql-not-start-up/" class="title has-link-black-ter is-size-6 has-text-weight-normal">【问题处理】MySQL无法启动</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">问题处理</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -793,6 +852,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2020/05/">
@@ -889,7 +959,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019-2020 车库Lab&nbsp;
+                &copy; 2019-2022 车库Lab&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 

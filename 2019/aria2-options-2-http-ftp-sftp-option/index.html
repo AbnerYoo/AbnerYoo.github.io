@@ -3,25 +3,29 @@
 <head>
     <meta charset="utf-8" />
 
-<meta name="generator" content="Hexo 4.0.0" />
+<meta name="generator" content="Hexo 4.2.1" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 <title>aria2选项说明--HTTP/FTP/SFTP选项 - 车库Lab-分享最新最特别的小技能</title>
 
 
-    <meta name="description" content="以下均根据官方文档及相关翻译整合和梳理 HTTP&#x2F;FTP&#x2F;SFTP选项1--all-proxy=&amp;lt;PROXY&amp;gt; 为所有协议的传输使用代理服务器。用 “”（空字串）来覆盖之前定义的代理。您可以使用 --http-proxy，--https-proxy 和 --ftp-proxy 选项为某个协议指定代理服务器。该选项对所有下载有效。代理地址格式[http:&#x2F;&#x2F;][USER:PASSWORD">
-<meta name="keywords" content="aria2,aria2选项,aria2配置">
+    <meta name="description" content="以下均根据官方文档及相关翻译整合和梳理 HTTP&#x2F;FTP&#x2F;SFTP选项1--all-proxy&#x3D;&lt;PROXY&gt; 为所有协议的传输使用代理服务器。用 “”（空字串）来覆盖之前定义的代理。您可以使用 --http-proxy，--https-proxy 和 --ftp-proxy 选项为某个协议指定代理服务器。该选项对所有下载有效。代理地址格式[http:&#x2F;&#x2F;][USER:PASSWORD">
 <meta property="og:type" content="article">
 <meta property="og:title" content="aria2选项说明--HTTP&#x2F;FTP&#x2F;SFTP选项">
-<meta property="og:url" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;2019&#x2F;aria2-options-2-http-ftp-sftp-option&#x2F;index.html">
+<meta property="og:url" content="https://g-lab.xyz/2019/aria2-options-2-http-ftp-sftp-option/index.html">
 <meta property="og:site_name" content="车库Lab-分享最新最特别的小技能">
-<meta property="og:description" content="以下均根据官方文档及相关翻译整合和梳理 HTTP&#x2F;FTP&#x2F;SFTP选项1--all-proxy=&amp;lt;PROXY&amp;gt; 为所有协议的传输使用代理服务器。用 “”（空字串）来覆盖之前定义的代理。您可以使用 --http-proxy，--https-proxy 和 --ftp-proxy 选项为某个协议指定代理服务器。该选项对所有下载有效。代理地址格式[http:&#x2F;&#x2F;][USER:PASSWORD">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2020-02-28T10:16:38.107Z">
+<meta property="og:description" content="以下均根据官方文档及相关翻译整合和梳理 HTTP&#x2F;FTP&#x2F;SFTP选项1--all-proxy&#x3D;&lt;PROXY&gt; 为所有协议的传输使用代理服务器。用 “”（空字串）来覆盖之前定义的代理。您可以使用 --http-proxy，--https-proxy 和 --ftp-proxy 选项为某个协议指定代理服务器。该选项对所有下载有效。代理地址格式[http:&#x2F;&#x2F;][USER:PASSWORD">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://g-lab.xyz/images/og_image.png">
+<meta property="article:published_time" content="2019-10-26T11:24:14.000Z">
+<meta property="article:modified_time" content="2022-01-26T13:48:51.941Z">
+<meta property="article:author" content="车库Lab">
+<meta property="article:tag" content="aria2">
+<meta property="article:tag" content="aria2选项">
+<meta property="article:tag" content="aria2配置">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;g-lab.xyz&#x2F;images&#x2F;og_image.png">
+<meta name="twitter:image" content="https://g-lab.xyz/images/og_image.png">
 
 
 
@@ -171,112 +175,112 @@
             
         </h1>
         <div class="content">
-            <p><em>以下均根据官方文档及相关翻译整合和梳理</em></p>
-<h1 id="HTTP-FTP-SFTP选项"><a href="#HTTP-FTP-SFTP选项" class="headerlink" title="HTTP/FTP/SFTP选项"></a>HTTP/FTP/SFTP选项</h1><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--all-proxy=&lt;PROXY&gt;</span><br></pre></td></tr></table></figure>
+            <html><head></head><body><p><em>以下均根据官方文档及相关翻译整合和梳理</em></p>
+<h1 id="HTTP-FTP-SFTP选项"><a href="#HTTP-FTP-SFTP选项" class="headerlink" title="HTTP/FTP/SFTP选项"></a>HTTP/FTP/SFTP选项</h1><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--all-proxy=&lt;PROXY&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>为所有协议的传输使用代理服务器。用 “”（空字串）来覆盖之前定义的代理。您可以使用 <code>--http-proxy</code>，<code>--https-proxy</code> 和 <code>--ftp-proxy</code> 选项为某个协议指定代理服务器。该选项对所有下载有效。<br>代理地址格式<code>[http://][USER:PASSWORD@]HOST[:PORT]</code>。另请参见： 环境（ENVIRONMENT）章节。</p>
 <a id="more"></a>
 <blockquote>
-<p>如果用户名和密码被内置在了代理地址中，并且还通过<em>–{http,https,ftp,all}-proxy-{user,passwd}</em>选项来指定，这些之后被指定的选项覆盖之前的选项。例如，如果你在aria2.conf配置文件中指定<code>http-proxy-user=myname, http-proxy-passwd=mypass</code>并且在命令行也指定<code>--http-proxy=&quot;http://proxy&quot;</code><br>， 然后你会得到HTTP代理设置<code>http://proxy</code>带上用户名<code>myname</code>和密码<code>mypass</code>。</p>
-<p>另一个例子，如果你在命令行指定<code>--http-proxy=&quot;http://user:pass@proxy&quot; --http-proxy-user=&quot;myname&quot; --http-proxy-passwd=&quot;mypass&quot;</code>，然后你会得到HTTP代理设置<code>http://proxy</code>带上用户名<code>myname</code>和密码<code>mypass</code>。</p>
-<p>再一个例子，如果你在命令行指定<code>--http-proxy-user=&quot;myname&quot; --http-proxy-passwd=&quot;mypass&quot; --http-proxy=&quot;http://user:pass@proxy&quot;</code>，然后你会得到HTTP代理设置<code>http://proxy</code>带上用户名<code>user</code>和密码<code>pass</code>。</p>
+<p>如果用户名和密码被内置在了代理地址中，并且还通过<em>–{http,https,ftp,all}-proxy-{user,passwd}</em>选项来指定，这些之后被指定的选项覆盖之前的选项。例如，如果你在aria2.conf配置文件中指定<code>http-proxy-user=myname, http-proxy-passwd=mypass</code>并且在命令行也指定<code>--http-proxy="http://proxy"</code><br>， 然后你会得到HTTP代理设置<code>http://proxy</code>带上用户名<code>myname</code>和密码<code>mypass</code>。</p>
+<p>另一个例子，如果你在命令行指定<code>--http-proxy="http://user:pass@proxy" --http-proxy-user="myname" --http-proxy-passwd="mypass"</code>，然后你会得到HTTP代理设置<code>http://proxy</code>带上用户名<code>myname</code>和密码<code>mypass</code>。</p>
+<p>再一个例子，如果你在命令行指定<code>--http-proxy-user="myname" --http-proxy-passwd="mypass" --http-proxy="http://user:pass@proxy"</code>，然后你会得到HTTP代理设置<code>http://proxy</code>带上用户名<code>user</code>和密码<code>pass</code>。</p>
 </blockquote>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--all-proxy-passwd=&lt;PASSWD&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--all-proxy-passwd=&lt;PASSWD&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>为 <code>--all-proxy</code> 指定密码。</p>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--all-proxy-user=&lt;USER&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--all-proxy-user=&lt;USER&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>为 <code>--all-proxy</code> 指定用户。</p>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--checksum=&lt;TYPE&gt;=&lt;DIGEST&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--checksum=&lt;TYPE&gt;=&lt;DIGEST&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>设置校验和。TYPE是哈希类型。可被支持的哈希类型列在<code>aria2c -v</code>的<code>Hash Algorithms</code>。DIGEST是十六进制摘要。例如，像这样设置sha-1十六进制：<code>sha-1=0192ba11326fe2298c8cb4de616f4d4140213838</code>。这个选项只会被应用到HTTP(S)/FTP下载。</p>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--connect-timeout=&lt;SEC&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--connect-timeout=&lt;SEC&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>设置连接 HTTP/FTP/代理服务器的超时（以秒计）。在连接建立之后，此选项将失效，并以 –timeout 选项替代。默认：==60==。</p>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--dry-run [true|false]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--dry-run [true|false]</span><br></pre></td></tr></tbody></table></figure>
 <p>如果填 true，aria2 仅检查远端文件是否可用而不下载数据。此选项对 HTTP/FTP 下载有效。如果启用，BitTorrent 下载会取消。默认：==false==。</p>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--lowest-speed-limit=&lt;SPEED&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--lowest-speed-limit=&lt;SPEED&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>如果下载速度低于或等于此值（字节/秒），则断开连接。0意味着 aria2 没有最低速度限制。可附加 K 或 M（1K=1024，1M=1024K）。此选项对 BitTorrent 下载无效。默认：==0==。</p>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-x, --max-connection-per-server=&lt;NUM&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-x, --max-connection-per-server=&lt;NUM&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>每个下载对单个服务器的最大连接数。默认：==1==。</p>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--max-file-not-found=&lt;NUM&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--max-file-not-found=&lt;NUM&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>如果 aria2 从远端 HTTP/FTP 服务器收到了 NUM 次“文件未找到”状态，且没有得到任何数据，就认为此下载失败。指定 0 来禁用此选项。此选项仅适用于 HTTP/FTP 服务器。重试次数计入<code>--max-tries</code>，所以也应该设置这个选项。默认：==0==。</p>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-m, --max-tries=&lt;N&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-m, --max-tries=&lt;N&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>设置重试次数。0 表示不限次数。默认：==5==。</p>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-k, --min-split-size=&lt;SIZE&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-k, --min-split-size=&lt;SIZE&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>aria2 不分割小于 2 * SIZE 字节范围的文件。例如，让我们考虑下载 20MiB 的文件，如果 SIZE 为10M，aria2 可以将文件拆分为2个[0-10MiB]和[10MiB-20MiB]的文件，并使用 2 个源（如果 –split&gt;=2）下载它。如果 SIZE 为 15M，由于 2 * 15M&gt;20MiB，aria2 不会拆分文件并使用 1 个源下载。你可以追加 K 或 M（1K = 1024，1M = 1024K）。可能的值: 1M -1024M。默认: ==20M==。</p>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--netrc-path=&lt;FILE&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--netrc-path=&lt;FILE&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>指定 netrc 文件的路径。默认：==$(HOME)/.netrc==</p>
 <blockquote>
 <p>netrc 文件的权限必须设置为600.否则，该文件会被忽略。</p>
 </blockquote>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-n, --no-netrc [true|false]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-n, --no-netrc [true|false]</span><br></pre></td></tr></tbody></table></figure>
 <p>禁用 netrc 支持。默认启用。</p>
 <blockquote>
 <p>只有<code>--no-netrc</code>设置为<code>false</code>时，netrc 文件在启动时被读取。所有如果<code>--no-netrc</code>在启动时设置为<code>true</code>，则整个会话期间没有netrc可用。即使使用<code>aria2.changeGlobalOption()</code>来设置<code>--no-netrc=false</code>，也不能启用netrc。</p>
 </blockquote>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--no-proxy=&lt;DOMAINS&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--no-proxy=&lt;DOMAINS&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>指定不应使用代理的主机名、域名或（含或不含CIDR 块的）网络地址列表，以半角逗号 “,”分隔。</p>
 <blockquote>
 <p>对于带有子网掩码的网络地址，IPv4和IPv6地址均起作用。当前实现无法解析URI的主机名来与<code>--no-proxy</code>指定的网络地址做比较。所以仅当URI具有数字IP地址时才有效。</p>
 </blockquote>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-o, --out=&lt;FILE&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-o, --out=&lt;FILE&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>文件保存名字。此文件将以此名字永久保存在 <code>--dir</code>参数所指定的相对路径下。当 <code>--force-sequential</code> 参数被启用时，此选项被忽略。</p>
 <blockquote>
 <p>不能给 Metalink 或 BitTorrent 下载指定文件名。该选项指定的文件名仅适用于直接使用命令行给 aria2 提供URI地址，而使用<code>--input-file, --force-sequential</code>选项时不生效。</p>
 <p>示例：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;$ aria2c -o myfile.zip &quot;http://mirror1/file.zip&quot; &quot;http://mirror2/file.zip&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;$ aria2c -o myfile.zip "http://mirror1/file.zip" "http://mirror2/file.zip"</span><br></pre></td></tr></tbody></table></figure>
 </blockquote>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--proxy-method=&lt;METHOD&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--proxy-method=&lt;METHOD&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>设置代理请求方式。请求方式是<code>get</code>或者<code>tunnel</code>。无论该选项如何配置，HTTPS下载始终使用<code>tunnel</code>。默认：==get==。</p>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-R, --remote-time [true|false]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-R, --remote-time [true|false]</span><br></pre></td></tr></tbody></table></figure>
 <p>从 HTTP/FTP 服务器获取远程文件的时间戳，确定其可用时将其应用到本地文件。默认：==false==。</p>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--reuse-uri [true|false]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--reuse-uri [true|false]</span><br></pre></td></tr></tbody></table></figure>
 <p>如果未使用的 URI 已用完，复用已用过的。默认：==true==。</p>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--retry-wait=&lt;SEC&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--retry-wait=&lt;SEC&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>设定重试等待时间。秒数 &gt; 0 时，如果 HTTP 返回 503 错误，aria2 会在 &lt;秒数&gt; 秒后重试下载。默认：==0==。</p>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--server-stat-of=&lt;FILE&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--server-stat-of=&lt;FILE&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>指定保存的服务器性能配置文件的名称。也可以使用 <code>--server-stat-if</code> 选项加载保存的数据。有关文件格式，参见<a href="https://aria2.github.io/manual/en/html/aria2c.html#server-performance-profile" target="_blank" rel="noopener">服务器性能配置文件(Server Performance Profile)</a>。</p>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--server-stat-if=&lt;FILE&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--server-stat-if=&lt;FILE&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>指定要加载的服务器的性能配置文件的名称。<br>加载的数据将被用在某些 URI 选择器之中，如<code>feedback</code>。参见 <code>--uri-selector</code> 选项。有关文件格式，参见<a href="https://aria2.github.io/manual/en/html/aria2c.html#server-performance-profile" target="_blank" rel="noopener">服务器性能配置文件(Server Performance Profile)</a>。</p>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--server-stat-timeout=&lt;SEC&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--server-stat-timeout=&lt;SEC&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>指定从上次连接服务器起，弃用性能档案文件的超时（以秒计）。默认：==86400 （24小时）==。</p>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-s, --split=&lt;N&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-s, --split=&lt;N&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>使用 N 个连接下载文件。如 N 小于需要下载的 URI 数量，那么将使用所有连接，剩余的 URL 将作为候补。如 N 大于需要下载的 URI 数量，多余的 URL 将用于并行下载。到主机的连接数量受 <code>--max-connection-per-server</code> 选项限制。参见 <code>--min-split-size</code> 选项。默认：==5==</p>
 <blockquote>
 <p>一些 Metalinks 规定连接服务器的数量。aria2 严格遵守。这意味着如果 Metalink 定义的最大连接数小于N，那么 aria2 使用这个最大连接数代替N。</p>
 </blockquote>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--stream-piece-selector=&lt;SELECTOR&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--stream-piece-selector=&lt;SELECTOR&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>指定在 HTTP/FTP 下载中使用的块选择算法。<br>块指的是在并行分块下载中固定长度的分段。如果给定<code>default</code>，aria2选择分块以减少建立连接的数量。 这是个合理的默认行为，因为建立连接是一个昂贵的操作。 如果给定<code>inorder</code>，aria2会选择最小索引的块。索引等于0表示文件的第一个块。 这会在边下边播的场景中十分有用。 <code>--enable-http-pipelining</code>选项有可能有助于减少重新连接的开销。请注意aria2生效了<code>--min-split-size</code>选项，因此对<code>--min-split-size</code>选项有必要指定个合理的值。 如果给定<code>random</code>，aria2将会随机选择块。 像<code>inorder</code>一样，<code>--min-split-size</code>选项也是可以被生效的。如果给定<code>geom</code>，一开始 aria2 像<code>inorder</code>一样选择索引最小的块，但是它会成倍地增加与前一个被选中块之间的空间。这将会减少建立连接的数量，同时还会先下载文件的开头部分。这会在边下边播的场景中十分有用。默认：==default==。</p>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-t, --timeout=&lt;SEC&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-t, --timeout=&lt;SEC&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>设置超时（以秒计）。默认：==60==。</p>
 <hr>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--uri-selector=&lt;SELECTOR&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--uri-selector=&lt;SELECTOR&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>指定 URI 选择算法。可能的值有<code>inorder</code>、 <code>feedback</code> 和 <code>adaptive</code>。如果指定<code>inorder</code>，将以 URI 列表中显示的顺序尝试 URI。如果指定<code>feedback</code>，aria2 将根据先前下载中监测到的下载速度并选择 URI 列表中最快的服务器。此选项也可以有效地跳过死镜像。监测到的下载速度是 <code>--server-stat-of</code> 和 <code>--server-stat-if</code> 选项中提到的服务器性能档案文件的一部分。如果指定<code>adaptive</code>，则从第一个和保留的连接选择最好的镜像。对于附加的连接，将返回未经测试的镜像，并且如果如果它们中的每一个都经过了测试，则返回需要再次测试的镜像。否则，不再选择镜像。如同<code>feedback</code>，此配置使用服务器的性能档案文件。默认：==feedback==</p>
 <h1 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h1><ul>
 <li><a href="https://aria2.github.io/manual/en/html/aria2c.html" target="_blank" rel="noopener" title="aria2官方文档">aria2官方文档</a></li>
 <li><a href="https://translations.launchpad.net/aria2/trunk/+pots/aria2/zh_CN/+translate" target="_blank" rel="noopener" title="aria2指令说明翻译（中文）">aria2指令说明翻译（中文）</a></li>
 </ul>
-
+</body></html>
         </div>
 		
             <ul class="post-copyright">
@@ -307,6 +311,21 @@
         
     </div>
 </div>
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label">自制小程序</h3>
+        <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content:flex-start; align-items: center;">
+            <div class="qrcode" style="flex-grow: 1;"><img src="/images/qrcode_mini_program.jpg"></div>
+            <div style="text-align: center; color: #7a7a7a;font-size: 2.5rem;flex-grow: 1;">
+                <p>扫一扫点外卖更优惠</p>
+                <p>还有更多购物优惠等你来拿</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 <div class="card">
@@ -423,7 +442,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        13
+                        14
                     </p>
                 </div>
             </div>
@@ -433,7 +452,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        10
                     </p>
                 </div>
             </div>
@@ -443,7 +462,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        20
+                        23
                     </p>
                 </div>
             </div>
@@ -505,6 +524,21 @@
         
 <div class="card widget">
     <div class="card-content">
+      <div class="menu">
+        <h3 class="menu-label">自制小程序</h3>
+        <div style="text-align: center; color: #7a7a7a;">
+          <p>扫一扫点外卖更优惠</p>
+          <p>还有更多购物优惠等你来拿</p>
+        </div>
+      </div>
+		  <div class="qrcode"><img src="/images/qrcode_mini_program.jpg"></div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
 		<!-- 展示广告 -->
 		<ins class="adsbygoogle"
 			 style="display:block"
@@ -528,23 +562,12 @@
         <ul class="menu-list">
         
             <li>
-                <a class="level is-mobile" href="https://www.yh-blog.cn/" target="_blank">
+                <a class="level is-mobile" href="https://my.oschina.net/u/2404065" target="_blank">
                     <span class="level-left">
-                        <span class="level-item">YH的个人小站</span>
+                        <span class="level-item">风语者Wt</span>
                     </span>
                     <span class="level-right">
-                        <span class="level-item tag">www.yh-blog.cn</span>
-                    </span>
-                </a>
-            </li>
-        
-            <li>
-                <a class="level is-mobile" href="http://toc.lieme.cn/" target="_blank">
-                    <span class="level-left">
-                        <span class="level-item">故事胶片</span>
-                    </span>
-                    <span class="level-right">
-                        <span class="level-item tag">toc.lieme.cn</span>
+                        <span class="level-item tag">my.oschina.net</span>
                     </span>
                 </a>
             </li>
@@ -612,9 +635,17 @@
                 <span class="level-item">后端</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a><ul><li>
+        <a class="level is-marginless" href="/categories/%E5%90%8E%E7%AB%AF/Java/">
+            <span class="level-start">
+                <span class="level-item">Java</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/%E5%90%8E%E7%AB%AF/Node-js/">
             <span class="level-start">
                 <span class="level-item">Node.js</span>
@@ -684,6 +715,20 @@
                     <a class="tags has-addons" href="/tags/Icarus/">
                         <span class="tag">Icarus</span>
                         <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JDK/">
+                        <span class="tag">JDK</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java/">
+                        <span class="tag">Java</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -786,6 +831,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+                        <span class="tag">环境搭建</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">
                         <span class="tag">问题处理</span>
                         <span class="tag is-grey">6</span>
@@ -802,6 +854,19 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-01-26T02:18:26.000Z">2022-01-26</time></div>
+                    <a href="/2022/jdk-install/" class="title has-link-black-ter is-size-6 has-text-weight-normal">【开发环境搭建】Java环境之JDK安装</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a> / <a class="has-link-grey -link" href="/categories/%E5%90%8E%E7%AB%AF/Java/">Java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -855,19 +920,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-13T04:00:00.000Z">2020-03-13</time></div>
-                    <a href="/2020/mysql-not-start-up/" class="title has-link-black-ter is-size-6 has-text-weight-normal">【问题处理】MySQL无法启动</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">问题处理</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -878,6 +930,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2020/05/">
@@ -974,7 +1037,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019-2020 车库Lab&nbsp;
+                &copy; 2019-2022 车库Lab&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
